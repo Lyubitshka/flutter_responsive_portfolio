@@ -1,11 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_presentation/app/utils/projects_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
 
@@ -43,6 +43,7 @@ class _ProjectCardDialogDialogState extends State<ProjectCardDialog> {
         children: [
           Text(
             widget.projectName,
+            textAlign: TextAlign.center,
             style: GoogleFonts.chango(
               fontSize: screenSize.height < 850 ? 35 : 55,
               fontWeight: FontWeight.w700,
@@ -51,19 +52,29 @@ class _ProjectCardDialogDialogState extends State<ProjectCardDialog> {
             // textAlign: TextAlign.right,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () async {
+              final Uri url = Uri.parse(widget.link);
+              if (await canLaunchUrl(url)) {
+                await launchUrl(url);
+              } else {
+                throw 'Couldn not lunch $url';
+              }
+            },
             child: Text(
               widget.link,
               textAlign: TextAlign.center,
               style: GoogleFonts.courierPrime(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  color: primaryColor),
+                fontSize: 14,
+                fontWeight: FontWeight.w700,
+                color: primaryColor,
+              ),
+
               // textAlign: TextAlign.right,
             ),
           ),
           const Gap(5),
-          Row(children: [
+          SingleChildScrollView(
+              child: Row(children: [
             Expanded(
               child: CarouselSlider.builder(
                 carouselController: imgController,
@@ -88,14 +99,14 @@ class _ProjectCardDialogDialogState extends State<ProjectCardDialog> {
               child: Text(
                 widget.description,
                 style: GoogleFonts.josefinSans(
-                  fontSize: screenSize.width < 850 ? 22 : 28,
+                  fontSize: screenSize.width < 850 ? 22 : 25,
                   fontWeight: FontWeight.w300,
                   color: secondaryColor,
                 ),
                 textAlign: TextAlign.justify,
               ),
             ),
-          ])
+          ]))
         ],
       ),
     );

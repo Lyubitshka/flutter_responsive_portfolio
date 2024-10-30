@@ -102,6 +102,6 @@ List<CertificatesUtils> certificatesUtils = [
     dateOfCompletion: "2024",
     length: 64,
     description:
-        '&&&&&&&&&&&&&During the curse I get along with basic and advanced concepts of TS / integration into Webpack / use TS with ReactJS / working with 3rd party libraries /',
+        '',
   ),
 ];

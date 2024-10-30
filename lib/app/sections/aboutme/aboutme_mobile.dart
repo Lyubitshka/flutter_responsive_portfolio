@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:scaled_list/scaled_list.dart';
+// import 'package:scaled_list/scaled_list.dart';
 import 'package:web_presentation/app/utils/about_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
 import 'package:web_presentation/core/constants/constants.dart';

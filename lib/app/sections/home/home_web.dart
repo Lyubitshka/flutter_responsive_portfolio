@@ -30,11 +30,12 @@ class _HomeWebState extends State<HomeWeb> {
         // fit: StackFit.loose,
         children: [
           Positioned(
-            right: screenSize.width < 1600 ? -32.sw : -20.sw,
-            top: 150,
+            right: screenSize.width < 1024 ? -32.sw : -20.sw,
+            top: 100,
             child: Image.asset(
               'images/home_img.png',
-              scale: screenSize.width < 1500 ? 1.4 : 1.2,
+              // scale: screenSize.width < 1024 ? 1.4 : 1.2,
+              scale: 1.5,
               color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.6),
               colorBlendMode: BlendMode.modulate,
             ),
@@ -86,9 +87,9 @@ class _HomeWebState extends State<HomeWeb> {
                           color: textColor.withOpacity(0.8), fontSize: 32),
                     ),
                   ),
-                  SizedBox(height: 5.sh),
+                  SizedBox(height: 4.sh),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 42.0, left: 20.sw),
+                    padding: EdgeInsets.only(bottom: 42.0, left: 50.sw),
                     child: InkWell(
                         onHover: (value) {
                           setState(() {

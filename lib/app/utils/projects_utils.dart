@@ -53,23 +53,23 @@ List<ProjectUtils> projectUtils = [
     projectGridImg: cookbookImgMini,
   ),
   ProjectUtils(
-    name: 'This portfolio web/tablet/mobile page',
+    name: 'This portfolio \n responsive flutter page',
     icon: Icons.nature_people_sharp,
     description:
-        'Simple application for chatting with friends. Providing user accounts creation with shots from mobile phone camera and chat history due to used database.',
+        'The process of creating this portfolio page was quite a challenge for me, but it turned out to be a rewarding experience. It pushed me to think creatively and step outside my comfort zone, and in the process, I learned a lot of new skills and improved my overall understanding of design and development.',
     imgAsset: favPlacesImgs,
-    gitLink: 'https://github.com/Lyubitshka/simple_chat_app_flutter',
-    projectGridImg: chatImgMini,
+    gitLink: 'https://github.com/Lyubitshka/flutter_responsive_portfolio',
+    projectGridImg: portfolioMini,
   ),
   ProjectUtils(
-    name: 'And many more of other mini projects.. click to read more',
+    name: 'And many more of other projects',
     icon: Icons.other_houses_sharp,
-    description: 'As atime goes by ',
+    description: 'As time goes by ',
     imgAsset: [
       '/images/projects/chat_app_2.png',
       '/images/projects/chat_app_3.png',
     ],
-    gitLink: 'https://github.com/Lyubitshka/simple_chat_app_flutter',
+    gitLink: 'https://github.com/Lyubitshka?tab=repositories',
     projectGridImg: chatImgMini,
   ),
 ];

@@ -52,9 +52,18 @@ String cookbookImgMini = '/images/projects/cookbook_mini.png';
 String favPlacesDesc =
     'Simple mobile app for storing data on the device with help of sqflite, where the user can save his favorite places over the World. You can  add a place with your current location or choose via Google Maps API, and save with a photo made by phone camera (image_picker package). State management via Riverpod.';
 String favPlacesGit = '';
-
-List<String> favPlacesImgs = [''];
+List<String> favPlacesImgs = [
+  '/images/projects/portfolio2.png',
+  '/images/projects/portfolio4.png'
+];
+String portfolioMini = 'images/projects/mini_portfolio.png';
 //
+List<String> otherProjectDesc = [
+  'YELPCamp ',
+  'MyWorkout Diary - track yout daily trainig thanks to firebase auth & db feature',
+  'Hangman - a simple Hangman Game written in  help of React',
+  'Minimal Habits Tracker',
+];
 
 String footerCopyright =
     "Developed by Anna Doroszewska | Copyright by me © 2024.";
@@ -74,9 +83,9 @@ String aboutMe2 =
     'Exercising at home in front of tv watching some interesting content on the Internet about my hobbies';
 
 //
-String contactHeadding = "Let’s try my service now!";
-String contactSubHeadding =
-    "Let’s work together and make everything super cute and super useful.";
+// String contactHeadding = "Let’s try my service now!";
+// String contactSubHeadding =
+//     "Let’s work together and make everything super cute and super useful.";
 //
 String miniDescription =
     "Freelancer providing services for programming and design content needs. Join me down below and let's get started!";
@@ -85,7 +94,4 @@ String aboutMiniDescription1 =
 String aboutMiniDescription2 =
     "Quia voluptas sit aspernatur aut odit aut fugit, sed ruiano consequntar magni dolores.";
 
-//contect
-String contectAddress = "P947+8RR, Bd de L'A.L.N, Oran";
-String contectEmail = "Info@aedbel.com\naedbel@gmail.com";
-String contectPhone = "+61 3 8376 6284\n+800 2345 6789";
+//contact

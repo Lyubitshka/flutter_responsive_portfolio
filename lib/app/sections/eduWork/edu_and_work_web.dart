@@ -22,25 +22,26 @@ class _EduAndWorkWebState extends State<EduAndWorkWeb> {
     return Container(
       color: bgColor,
       width: 100.sw,
-      // padding: EdgeInsets.only(top: 6.sh, left: 15.sw, right: 3.sw),
+      padding: const EdgeInsets.only(top: 15, left: 25, right: 25, bottom: 20),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             'Education & Work',
             style: GoogleFonts.josefinSans(
               fontSize: 42,
               fontWeight: FontWeight.w700,
-              color: textColor,
+              color: primaryColor,
             ),
           ),
-          SizedBox(height: 3.sh),
+          const SizedBox(height: 15),
           EntranceFader(
             delay: const Duration(milliseconds: 300),
             duration: const Duration(seconds: 2),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   padding: const EdgeInsets.all(25),
@@ -115,6 +116,7 @@ class _EduAndWorkWebState extends State<EduAndWorkWeb> {
                         child: Text(
                           eduworkUtils[0].description,
                           style: GoogleFonts.josefinSans(fontSize: 20),
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     )
@@ -129,7 +131,9 @@ class _EduAndWorkWebState extends State<EduAndWorkWeb> {
             delay: const Duration(milliseconds: 600),
             duration: const Duration(seconds: 2),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+
               children: [
                 Container(
                   padding: const EdgeInsets.all(25),
@@ -202,6 +206,7 @@ class _EduAndWorkWebState extends State<EduAndWorkWeb> {
                         eduworkUtils[1].description,
                         style: GoogleFonts.josefinSans(
                             fontSize: 20, color: secondaryColor),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ],

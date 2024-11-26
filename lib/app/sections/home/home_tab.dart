@@ -3,7 +3,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:web_presentation/core/animations/entrance_fader.dart';
@@ -30,12 +29,12 @@ class _HomeTabState extends State<HomeTab> {
         // fit: StackFit.loose,
         children: [
           Positioned(
-            // right: -90.sw,
-            top: 140,
+            left: 18.sw,
+            top: 80,
             child: Image.asset(
               'images/home_img.png',
-              scale: screenSize.width < 1100 ? 1.5 : 1.2,
-              color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.7),
+              scale: 1.5,
+              color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.6),
               colorBlendMode: BlendMode.modulate,
             ),
           ),
@@ -43,8 +42,11 @@ class _HomeTabState extends State<HomeTab> {
             // width: 100.sw,
             child: Padding(
               padding: EdgeInsets.only(
-                  left: screenSize.width > 800 ? 15.sw : 10.sw,
-                  top: screenSize.width > 800 ? 25.sh : 10.sh),
+                left: 15.sw,
+                top: 20.sh,
+                // left: screenSize.width > 800 ? 15.sw : 10.sw,
+                // top: screenSize.width > 800 ? 25.sh : 10.sh,
+              ),
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +59,7 @@ class _HomeTabState extends State<HomeTab> {
                         'Hello World',
                         speed: const Duration(milliseconds: 250),
                         textStyle: GoogleFonts.comingSoon(
-                          fontSize: screenSize.width > 800 ? 100 : 35,
+                          fontSize: screenSize.width > 800 ? 60 : 42,
                         ),
                       ),
                     ],
@@ -72,7 +74,8 @@ class _HomeTabState extends State<HomeTab> {
                       child: Text(
                         'I\'m Anna',
                         style: GoogleFonts.chango(
-                            fontSize: screenSize.width > 800 ? 125 : 60),
+                          fontSize: screenSize.width > 800 ? 100 : 60,
+                        ),
                       ),
                     ),
                   ),
@@ -83,7 +86,7 @@ class _HomeTabState extends State<HomeTab> {
                     child: Text(
                       overlayDescriptionText,
                       style: GoogleFonts.josefinSans(
-                          color: textColor.withOpacity(0.8), fontSize: 32),
+                          color: textColor.withOpacity(0.9), fontSize: 32),
                     ),
                   ),
                   SizedBox(height: 5.sh),

@@ -10,6 +10,9 @@ class Projects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Responsive(
-        mobile: ProjectsMobile(), tablet: ProjectsTab(), web: ProjectsWeb());
+      mobile: ProjectsMobile(),
+      tablet: ProjectsTab(),
+      web: ProjectsWeb(),
+    );
   }
 }

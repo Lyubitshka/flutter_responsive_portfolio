@@ -9,6 +9,8 @@ import 'package:web_presentation/app/sections/certificates/widgets/certificates_
 import 'package:web_presentation/app/utils/certificates_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
 
+import '../../../core/constants/constants.dart';
+
 class CertificatesWeb extends StatefulWidget {
   const CertificatesWeb({super.key});
 
@@ -22,15 +24,16 @@ class _CertificatesWebState extends State<CertificatesWeb> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       width: 100.sw,
+      constraints: const BoxConstraints(maxHeight: double.infinity),
       color: bgColor,
       padding: EdgeInsets.only(
-          top: 3.sh,
-          // left: screenWidth > 1450 ? 35.sw : 25.sw,
-          left: 10.sw,
-          right: 10.sw
-          // bottom: 2.sh,
-          // right: screenWidth > 1450 ? 35.sw : 25.sw
-          ),
+        top: 3.sh,
+        // left: screenWidth > 1450 ? 35.sw : 25.sw,
+        left: 10.sw,
+        right: 10.sw,
+        bottom: 42,
+        // right: screenWidth > 1450 ? 35.sw : 25.sw
+      ),
       child: Column(
         children: [
           Text(
@@ -39,6 +42,22 @@ class _CertificatesWebState extends State<CertificatesWeb> {
               fontSize: 42,
               fontWeight: FontWeight.w800,
               color: primaryColor,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 12,
+              left: 8,
+              right: 8,
+            ),
+            child: Text(
+              certifisatesDescription,
+              style: GoogleFonts.josefinSans(
+                fontSize: 18,
+                fontWeight: FontWeight.w400,
+                color: secondaryColor,
+              ),
+              textAlign: TextAlign.center,
             ),
           ),
           ListView.builder(

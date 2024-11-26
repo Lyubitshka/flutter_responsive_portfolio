@@ -37,7 +37,7 @@ List<String> tetrisImgs = [
 String tetrisImgMini = 'images/projects/mini_tetris.png';
 
 String cookBookDesc =
-    'Just a simple Cookbook on your phone, so you can have all your favorite meals in your pocket, anywhere you go! Meals are categorized and can be filtered by a built-in feature, plus you can mark the chosen meal as your favorite.';
+    'Just a simple cookbook on your phone, built with Flutter and using Riverpod for state management, so you can have all your favorite meals in your pocket wherever you go! Meals are neatly categorized and can be filtered using a built-in feature, plus you can mark any meal as a favorite to keep it easy to find.';
 String cookBookGit = 'https://github.com/Lyubitshka/flutter_cookbook';
 List<String> cookbookImgs = [
   '/images/projects/cookbook_1.png',
@@ -60,7 +60,7 @@ String portfolioMini = 'images/projects/mini_portfolio.png';
 //
 List<String> otherProjectDesc = [
   'YELPCamp ',
-  'MyWorkout Diary - track yout daily trainig thanks to firebase auth & db feature',
+  'MyWorkout Diary - track your daily trainig thanks to firebase auth & db feature',
   'Hangman - a simple Hangman Game written in  help of React',
   'Minimal Habits Tracker',
 ];
@@ -80,7 +80,7 @@ String aboutMe1 =
     'Staying up to date with newest resolutions in programming languages, frameworks and libraries which I\'m interested with.';
 
 String aboutMe2 =
-    'Exercising at home in front of tv watching some interesting content on the Internet about my hobbies';
+    'I enjoy working out at home while watching engaging content online related to my hobbies.';
 
 //
 // String contactHeadding = "Let’s try my service now!";
@@ -94,4 +94,7 @@ String aboutMiniDescription1 =
 String aboutMiniDescription2 =
     "Quia voluptas sit aspernatur aut odit aut fugit, sed ruiano consequntar magni dolores.";
 
-//contact
+//
+String certifisatesDescription =
+    '''The dynamic and ever-changing IT market requires continuous trend monitoring, which has led me to choose a career path as a Data Analyst. Over the past two years, I have prepared myself for the role of a front-end developer with a strong foundation in back-end development.
+    I have gained experience in programming (JavaScript, TypeScript, NodeJS), creating applications (Flutter/Dart, MERN stack), as well as working with analytical tools (MS Excel, Power Query, MySQL, MS Power BI).''';

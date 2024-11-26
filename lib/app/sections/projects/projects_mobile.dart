@@ -28,7 +28,7 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
           Text(
             'My Projects',
             style: GoogleFonts.josefinSans(
-              fontSize: 20,
+              fontSize: 34,
               fontWeight: FontWeight.w700,
               color: primaryColor,
             ),
@@ -37,11 +37,11 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.sw),
             child: Text(
-              'Provide Wide Range of Applications',
+              'Provide Wide Range of Ideas',
               textAlign: TextAlign.center,
               style: GoogleFonts.josefinSans(
-                fontSize: 26,
-                fontWeight: FontWeight.w700,
+                fontSize: 22,
+                fontWeight: FontWeight.w500,
                 color: secondaryColor,
               ),
             ),
@@ -78,7 +78,7 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
               color: Colors.white,
               spreadRadius: 1,
               blurRadius: 15,
-              offset: const Offset(-5, -5),
+              offset: Offset(-5, -5),
             ),
             BoxShadow(
               color: Colors.grey.shade500,

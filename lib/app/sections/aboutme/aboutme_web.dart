@@ -18,36 +18,37 @@ class AboutMeWeb extends StatelessWidget {
 
     return Container(
       // clipBehavior: Clip.antiAliasWithSaveLayer,
-      decoration: BoxDecoration(border: Border.all(color: Colors.white38)),
+      // decoration: BoxDecoration(border: Border.all(color: Colors.white38)),
       width: 100.sw,
       // height: 100.sw,
-      // color: Colors.white,
-      padding: EdgeInsets.only(top: 5.sh),
+      color: bgColor,
+      padding: const EdgeInsets.only(top: 25, bottom: 20),
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'About me',
+            'After hours',
             style: GoogleFonts.josefinSans(
-              fontSize: 32,
-              fontWeight: FontWeight.w800,
-              color: secondaryColor,
+              fontSize: 42,
+              fontWeight: FontWeight.w700,
+              color: primaryColor,
             ),
           ),
-          const Gap(10),
+          const Gap(5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 // width: 480,
-                height: 400,
+                // height: 400,
                 // clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white38,
+                    color: bgColor,
+                    borderRadius: const BorderRadius.all(Radius.circular(12)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.shade300,
+                        color: Colors.grey.shade500,
                         spreadRadius: 1,
                         blurRadius: 15,
                         offset: const Offset(4, 4),
@@ -72,17 +73,16 @@ class AboutMeWeb extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.josefinSans(
                             fontSize: 22,
-                            fontWeight: FontWeight.w500,
+                            // fontWeight: FontWeight.w500,
                             color: secondaryColor,
                           ),
                         ),
                       ),
                     ),
                     Positioned(
-                      top: 170,
+                      top: 190,
                       child: Image.asset(
                         'images/aboutme/learn.png',
-                        scale: 6,
                       ),
                     ),
                   ],
@@ -94,13 +94,12 @@ class AboutMeWeb extends StatelessWidget {
                   children: [
                     Image.asset(
                       'images/aboutme/yoga.png',
-                      scale: 6,
                     ),
                     Positioned(
-                      top: 300,
+                      top: 420,
                       child: SizedBox(
                         // height: 320,
-                        width: 320,
+                        width: 420,
                         child: Padding(
                           padding: const EdgeInsets.all(18.0),
                           child: Text(
@@ -117,7 +116,7 @@ class AboutMeWeb extends StatelessWidget {
                     ),
                   ]),
               SizedBox(
-                height: 420,
+                height: 630,
                 width: 350,
                 child: ListView.builder(
                     itemCount: hobbies.length,

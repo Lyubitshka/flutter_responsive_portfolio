@@ -26,7 +26,7 @@ class _MobileDrawerState extends State<MobileDrawer> {
       child: Material(
         color: bgColor,
         child: Padding(
-          padding: EdgeInsets.only(top: 5.sh),
+          padding: EdgeInsets.only(top: 3.sh),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -59,11 +59,13 @@ class _MobileDrawerState extends State<MobileDrawer> {
                     ),
                   ),
               Positioned(
-                left: -100,
+                // left: -100,
+                bottom: 15,
                 child: Image.asset(
                   'images/drawer_img.png',
                   color:
                       const Color.fromARGB(255, 255, 255, 255).withOpacity(0.7),
+                  // height: 10.sh,
                   colorBlendMode: BlendMode.modulate,
                 ),
               ),

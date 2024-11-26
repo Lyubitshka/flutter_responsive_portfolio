@@ -21,15 +21,15 @@ class _ProjectsTabState extends State<ProjectsTab> {
   Widget build(BuildContext context) {
     return Container(
       width: 100.sw,
-      color: Colors.white,
+      color: bgColor,
       padding: EdgeInsets.only(top: 5.sh, left: 5.sw, right: 5.sw),
       child: Column(
         children: [
           Text(
             'My Projects',
             style: GoogleFonts.josefinSans(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
+              fontSize: 36,
+              fontWeight: FontWeight.w800,
               color: primaryColor,
             ),
           ),
@@ -37,25 +37,25 @@ class _ProjectsTabState extends State<ProjectsTab> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.sw),
             child: Text(
-              'Provide Wide Range of Applications',
+              'Provide Wide Range of Ideas',
               textAlign: TextAlign.center,
               style: GoogleFonts.josefinSans(
-                fontSize: 32,
-                fontWeight: FontWeight.w700,
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
                 color: secondaryColor,
               ),
             ),
           ),
           EntranceFader(
-            delay: Duration(seconds: 1),
-            duration: Duration(seconds: 2),
+            delay: const Duration(seconds: 1),
+            duration: const Duration(seconds: 2),
             child: GridView.count(
               crossAxisCount: 2,
               shrinkWrap: true,
               primary: false,
               padding: EdgeInsets.all(5.sh),
-              crossAxisSpacing: 5.sh,
-              mainAxisSpacing: 5.sh,
+              crossAxisSpacing: 4.sh,
+              mainAxisSpacing: 4.sh,
               children: List.generate(6, (index) {
                 return ProjectCard(index);
               }),
@@ -95,11 +95,17 @@ class _ProjectsTabState extends State<ProjectsTab> {
           borderRadius: BorderRadius.circular(20),
           color: Colors.white,
           boxShadow: [
+            const BoxShadow(
+              color: Colors.white,
+              spreadRadius: 1,
+              blurRadius: 15,
+              offset: Offset(-5, -5),
+            ),
             BoxShadow(
-              color: Colors.grey.shade300,
-              spreadRadius: 60,
-              blurRadius: 70,
-              offset: const Offset(10, 50),
+              color: Colors.grey.shade500,
+              spreadRadius: 1,
+              blurRadius: 10,
+              offset: const Offset(4, 4),
             ),
           ]),
       child: Container(

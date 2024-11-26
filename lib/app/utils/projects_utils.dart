@@ -64,7 +64,7 @@ List<ProjectUtils> projectUtils = [
   ProjectUtils(
     name: 'And many more of other projects',
     icon: Icons.other_houses_sharp,
-    description: 'As time goes by ',
+    description: 'Check out my GitHub profile.',
     imgAsset: [
       '/images/projects/chat_app_2.png',
       '/images/projects/chat_app_3.png',

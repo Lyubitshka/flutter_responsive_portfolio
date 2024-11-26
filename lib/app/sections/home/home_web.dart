@@ -1,9 +1,6 @@
-// ignore_for_file: dead_code
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:web_presentation/core/animations/entrance_fader.dart';
@@ -30,12 +27,13 @@ class _HomeWebState extends State<HomeWeb> {
         // fit: StackFit.loose,
         children: [
           Positioned(
-            right: screenSize.width < 1024 ? -32.sw : -20.sw,
-            top: 100,
+            // right: -32.sw,
+            right: screenSize.width < 1024 ? -22.sw : -30.sw,
+            top: 120,
             child: Image.asset(
               'images/home_img.png',
               // scale: screenSize.width < 1024 ? 1.4 : 1.2,
-              scale: 1.5,
+              scale: 1.4,
               color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.6),
               colorBlendMode: BlendMode.modulate,
             ),
@@ -44,8 +42,11 @@ class _HomeWebState extends State<HomeWeb> {
             // width: 100.sw,
             child: Padding(
               padding: EdgeInsets.only(
-                  left: screenSize.width > 800 ? 15.sw : 10.sw,
-                  top: screenSize.width > 800 ? 25.sh : 10.sh),
+                left: 15.sw,
+                top: 25.sh,
+                // left: screenSize.width > 800 ? 15.sw : 10.sw,
+                // top: screenSize.width > 800 ? 25.sh : 10.sh,
+              ),
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,9 +57,9 @@ class _HomeWebState extends State<HomeWeb> {
                     animatedTexts: [
                       TyperAnimatedText(
                         'Hello World',
-                        speed: const Duration(milliseconds: 250),
+                        speed: const Duration(milliseconds: 320),
                         textStyle: GoogleFonts.comingSoon(
-                          fontSize: screenSize.width > 800 ? 100 : 35,
+                          fontSize: screenSize.width > 800 ? 72 : 35,
                         ),
                       ),
                     ],
@@ -67,24 +68,26 @@ class _HomeWebState extends State<HomeWeb> {
                     // left: 50.sw,
                     // bottom: 17.sh,
                     child: EntranceFader(
-                      delay: const Duration(seconds: 3),
+                      delay: const Duration(seconds: 4),
                       offset: const Offset(0, 0),
-                      duration: const Duration(milliseconds: 800),
+                      duration: const Duration(milliseconds: 1500),
                       child: Text(
                         'I\'m Anna',
                         style: GoogleFonts.chango(
-                            fontSize: screenSize.width > 800 ? 125 : 60),
+                            fontSize: screenSize.width > 800 ? 120 : 60),
                       ),
                     ),
                   ),
-                  SizedBox(height: 2.sh),
+                  SizedBox(height: 1.sh),
                   Padding(
-                    padding: EdgeInsets.only(
-                        right: screenSize.width < 1200 ? 40.sw : 70.sw),
+                    padding: const EdgeInsets.only(
+                      // right: screenSize.width < 1200 ? 40.sw : 70.sw,
+                      right: 120,
+                    ),
                     child: Text(
                       overlayDescriptionText,
                       style: GoogleFonts.josefinSans(
-                          color: textColor.withOpacity(0.8), fontSize: 32),
+                          color: textColor.withOpacity(0.9), fontSize: 32),
                     ),
                   ),
                   SizedBox(height: 4.sh),

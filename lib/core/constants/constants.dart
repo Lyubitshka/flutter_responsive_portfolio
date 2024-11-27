@@ -96,5 +96,4 @@ String aboutMiniDescription2 =
 
 //
 String certifisatesDescription =
-    '''The dynamic and ever-changing IT market requires continuous trend monitoring, which has led me to choose a career path as a Data Analyst. Over the past two years, I have prepared myself for the role of a front-end developer with a strong foundation in back-end development.
-    I have gained experience in programming (JavaScript, TypeScript, NodeJS), creating applications (Flutter/Dart, MERN stack), as well as working with analytical tools (MS Excel, Power Query, MySQL, MS Power BI).''';
+    '''The dynamic and ever-changing IT market requires continuous trend monitoring, which has led me to choose a career path as a Data Analyst. Over the past two years, I have prepared myself for the role of a front-end developer with a strong foundation in back-end development. I have gained experience in programming (JavaScript, TypeScript, NodeJS), creating applications (Flutter/Dart, MERN stack), as well as working with analytical tools (MS Excel, Power Query, MySQL, MS Power BI).''';

@@ -27,7 +27,7 @@ class _HomeMobileState extends State<HomeMobile> {
       child: Padding(
         padding: EdgeInsets.only(
           left: 10.sw,
-          right: 10.sw,
+          right: 20,
           top: 30.sh,
           bottom: 5.sh,
         ),
@@ -39,16 +39,15 @@ class _HomeMobileState extends State<HomeMobile> {
             AnimatedTextKit(totalRepeatCount: 1, animatedTexts: [
               TyperAnimatedText('Hello World',
                   speed: const Duration(milliseconds: 250),
-                  textStyle: GoogleFonts.comingSoon(fontSize: 50)),
+                  textStyle: GoogleFonts.comingSoon(fontSize: 42)),
             ]),
-
             EntranceFader(
               delay: const Duration(seconds: 3),
               offset: const Offset(0, 0),
               duration: const Duration(milliseconds: 800),
               child: Text(
                 'I\'m Anna',
-                style: GoogleFonts.chango(fontSize: 65),
+                style: GoogleFonts.chango(fontSize: 60),
               ),
             ),
             SizedBox(height: 1.sh),
@@ -57,10 +56,10 @@ class _HomeMobileState extends State<HomeMobile> {
               child: Text(
                 overlayDescriptionText,
                 style: GoogleFonts.josefinSans(
-                    color: textColor.withOpacity(0.4), fontSize: 18),
+                    color: textColor.withOpacity(0.8), fontSize: 18),
               ),
             ),
-            SizedBox(height: 10.sh),
+            SizedBox(height: 6.sh),
 
             Center(
               child: InkWell(
@@ -95,45 +94,6 @@ class _HomeMobileState extends State<HomeMobile> {
           ],
         ),
       ),
-      // child: SizedBox(
-      //   width: screenSize.width,
-      //   height: screenSize.height,
-      //   child: const Column(
-      //     children: [
-      // Stack(
-      //   children: [
-      //     TitleText(
-      //       text: 'HELLO',
-      //       top: 100,
-      //       left: 180,
-      //     ),
-      //     TitleText(
-      //       text: 'WORLD',
-      //       top: 205,
-      //       left: 130,
-      //     ),
-      //     TitleText(
-      //       text: 'I\'M ANNA ',
-      //       top: 330,
-      //       left: 430,
-      //     ),
-      //     Positioned(
-      //       right: 50,
-      //       top: 100,
-      //       child: SizedBox(
-      //         width: 510,
-      //         child: Text(
-      //           overlayDescriptionText,
-      //           style: TextStyle(
-      //               color: Color.fromARGB(255, 0, 0, 0), fontSize: 20),
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
-      // ],
-      // ),
-      // ),
     );
   }
 }

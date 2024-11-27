@@ -22,7 +22,7 @@ class _EduWorkMobileState extends State<EduWorkMobile> {
     return Container(
       color: bgColor,
       width: 100.sw,
-      padding: EdgeInsets.only(top: 6.sh, left: 25.sw, right: 10.sw),
+      padding: EdgeInsets.only(top: 6.sh, left: 5.sw, right: 5.sw),
       child: Center(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
@@ -62,7 +62,7 @@ class _EduWorkMobileState extends State<EduWorkMobile> {
                                 color: Colors.white,
                                 spreadRadius: 3,
                                 blurRadius: 15,
-                                offset: const Offset(-6, -6),
+                                offset: Offset(-6, -6),
                               ),
                             ]),
                         child: Text(
@@ -164,7 +164,7 @@ class _EduWorkMobileState extends State<EduWorkMobile> {
                                 color: Colors.white,
                                 spreadRadius: 3,
                                 blurRadius: 15,
-                                offset: const Offset(-6, -6),
+                                offset: Offset(-6, -6),
                               ),
                             ]),
                         child: Text(

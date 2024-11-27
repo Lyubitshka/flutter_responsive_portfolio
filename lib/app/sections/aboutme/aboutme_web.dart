@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:scaled_list/scaled_list.dart';
 import 'package:web_presentation/app/utils/about_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
 import 'package:web_presentation/core/constants/constants.dart';
@@ -14,23 +12,17 @@ class AboutMeWeb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final ScrollController scrollContoller = ScrollController();
-
     return Container(
-      // clipBehavior: Clip.antiAliasWithSaveLayer,
-      // decoration: BoxDecoration(border: Border.all(color: Colors.white38)),
       width: 100.sw,
-      // height: 100.sw,
       color: bgColor,
       padding: const EdgeInsets.only(top: 25, bottom: 20),
       child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             'After hours',
             style: GoogleFonts.josefinSans(
               fontSize: 42,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w900,
               color: primaryColor,
             ),
           ),

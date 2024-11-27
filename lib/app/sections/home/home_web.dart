@@ -24,7 +24,6 @@ class _HomeWebState extends State<HomeWeb> {
       width: 100.sw,
       color: bgColor,
       child: Stack(
-        // fit: StackFit.loose,
         children: [
           Positioned(
             // right: -32.sw,
@@ -34,96 +33,88 @@ class _HomeWebState extends State<HomeWeb> {
               'images/home_img.png',
               // scale: screenSize.width < 1024 ? 1.4 : 1.2,
               scale: 1.4,
-              color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.6),
+              color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
               colorBlendMode: BlendMode.modulate,
             ),
           ),
-          SizedBox(
-            // width: 100.sw,
-            child: Padding(
-              padding: EdgeInsets.only(
-                left: 15.sw,
-                top: 25.sh,
-                // left: screenSize.width > 800 ? 15.sw : 10.sw,
-                // top: screenSize.width > 800 ? 25.sh : 10.sh,
-              ),
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // SizedBox(height: 0.5.sh),
-                  AnimatedTextKit(
-                    totalRepeatCount: 1,
-                    animatedTexts: [
-                      TyperAnimatedText(
-                        'Hello World',
-                        speed: const Duration(milliseconds: 320),
-                        textStyle: GoogleFonts.comingSoon(
-                          fontSize: screenSize.width > 800 ? 72 : 35,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Positioned(
-                    // left: 50.sw,
-                    // bottom: 17.sh,
-                    child: EntranceFader(
-                      delay: const Duration(seconds: 4),
-                      offset: const Offset(0, 0),
-                      duration: const Duration(milliseconds: 1500),
-                      child: Text(
-                        'I\'m Anna',
-                        style: GoogleFonts.chango(
-                            fontSize: screenSize.width > 800 ? 120 : 60),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 15.sw,
+              top: 28.sh,
+              // left: screenSize.width > 800 ? 15.sw : 10.sw,
+              // top: screenSize.width > 800 ? 25.sh : 10.sh,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // SizedBox(height: 0.5.sh),
+                AnimatedTextKit(
+                  totalRepeatCount: 1,
+                  animatedTexts: [
+                    TyperAnimatedText(
+                      'Hello World',
+                      speed: const Duration(milliseconds: 320),
+                      textStyle: GoogleFonts.comingSoon(
+                        fontSize: screenSize.width > 800 ? 72 : 35,
                       ),
                     ),
+                  ],
+                ),
+                EntranceFader(
+                  delay: const Duration(seconds: 4),
+                  offset: const Offset(0, 0),
+                  duration: const Duration(milliseconds: 1500),
+                  child: Text(
+                    'I\'m Anna',
+                    style: GoogleFonts.chango(
+                        fontSize: screenSize.width > 800 ? 120 : 60),
                   ),
-                  SizedBox(height: 1.sh),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      // right: screenSize.width < 1200 ? 40.sw : 70.sw,
-                      right: 120,
-                    ),
-                    child: Text(
-                      overlayDescriptionText,
-                      style: GoogleFonts.josefinSans(
-                          color: textColor.withOpacity(0.9), fontSize: 32),
-                    ),
+                ),
+                SizedBox(height: 1.sh),
+                Padding(
+                  padding: EdgeInsets.only(
+                    right: screenSize.width < 1200 ? 30.sw : 40.sw,
                   ),
-                  SizedBox(height: 4.sh),
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 42.0, left: 50.sw),
-                    child: InkWell(
-                        onHover: (value) {
-                          setState(() {
-                            isHover = value;
-                          });
-                        },
-                        onTap: () {},
-                        child: AvatarGlow(
-                          startDelay: const Duration(seconds: 4),
-                          glowColor: primaryColor,
-                          glowRadiusFactor: 0.80,
-                          child: Container(
-                            height: 55,
-                            width: 240,
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            decoration: BoxDecoration(
-                              color: isHover ? secondaryColor : primaryColor,
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Download CV',
-                                style: GoogleFonts.josefinSans(
-                                    fontSize: 20, color: Colors.white),
-                              ),
+                  child: Text(
+                    overlayDescriptionText,
+                    style: GoogleFonts.josefinSans(
+                        color: textColor.withOpacity(0.9), fontSize: 32),
+                  ),
+                ),
+                SizedBox(height: 4.sh),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 42.0, left: 20.sw),
+                  child: InkWell(
+                      onHover: (value) {
+                        setState(() {
+                          isHover = value;
+                        });
+                      },
+                      onTap: () {},
+                      child: AvatarGlow(
+                        startDelay: const Duration(seconds: 4),
+                        glowColor: primaryColor,
+                        glowRadiusFactor: 0.80,
+                        child: Container(
+                          height: 55,
+                          width: 240,
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: BoxDecoration(
+                            // ignore: dead_code
+                            color: isHover ? secondaryColor : primaryColor,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Download CV',
+                              style: GoogleFonts.josefinSans(
+                                  fontSize: 20, color: Colors.white),
                             ),
                           ),
-                        )),
-                  ),
-                ],
-              ),
+                        ),
+                      )),
+                ),
+              ],
             ),
           ),
         ],

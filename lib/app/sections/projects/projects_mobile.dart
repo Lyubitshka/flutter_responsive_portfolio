@@ -22,26 +22,28 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
     return Container(
       width: 100.sw,
       color: bgColor,
-      padding: EdgeInsets.only(top: 10.sh, left: 5.sw, right: 5.sw),
+      padding: EdgeInsets.only(top: 3.sh, left: 5.sw, right: 5.sw),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'My Projects',
-            style: GoogleFonts.josefinSans(
-              fontSize: 34,
-              fontWeight: FontWeight.w700,
-              color: primaryColor,
+          Padding(
+            padding: EdgeInsets.only(left: 5.sw),
+            child: Text(
+              'My Projects',
+              style: GoogleFonts.josefinSans(
+                fontSize: 34,
+                fontWeight: FontWeight.w700,
+                color: primaryColor,
+              ),
             ),
           ),
-          SizedBox(height: 1.sh),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.sw),
+            padding: EdgeInsets.only(left: 5.sw),
             child: Text(
-              'Provide Wide Range of Ideas',
-              textAlign: TextAlign.center,
+              'select card for more details',
               style: GoogleFonts.josefinSans(
-                fontSize: 22,
-                fontWeight: FontWeight.w500,
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
                 color: secondaryColor,
               ),
             ),
@@ -53,7 +55,7 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
               crossAxisCount: 2,
               shrinkWrap: true,
               primary: false,
-              padding: EdgeInsets.all(3.sh),
+              padding: EdgeInsets.all(2.sh),
               crossAxisSpacing: 2.sh,
               mainAxisSpacing: 2.sh,
               children: List.generate(6, (index) {
@@ -71,7 +73,7 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
       height: 100.sh,
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(12),
           color: bgColor,
           boxShadow: [
             const BoxShadow(
@@ -111,14 +113,14 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
                   onPressed: () {
                     showProjectDetails(index);
                   },
-                  iconSize: 52,
+                  iconSize: 12.sw,
                   icon: Icon(projectUtils[index].icon),
                 ),
-                const Gap(5),
+                Gap(5.sw),
                 Text(
                   projectUtils[index].name,
                   style: GoogleFonts.josefinSans(
-                      fontSize: 15, fontWeight: FontWeight.bold),
+                      fontSize: 14, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
               ],

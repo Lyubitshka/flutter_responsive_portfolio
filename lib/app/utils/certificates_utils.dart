@@ -110,8 +110,7 @@ List<CertificatesUtils> certificatesUtils = [
     length: 64,
     description: '''
 • Two state management methods - Cubit and Bloc
-• Communication method between Cubits, between Blocs, and 
-between Cubits and Blocs
+• Communication method between Cubits, between Blocs, and between Cubits and Blocs
 • Event Transformation function of Bloc
 • Working with 3 apps (TODO/Weather/Firebase Auth) and 
 various combinations of Cubit/Bloc
@@ -127,7 +126,7 @@ various combinations of Cubit/Bloc
     length: 7.5,
     description: '''
 • Introduction to AI and its applications in Node.js 
-•  OpenAI setup for basic apps
+• OpenAI setup for basic apps
 • Understanding models, tokens and roles 
 • OpenAI request parameters''',
   ),
@@ -150,16 +149,15 @@ various combinations of Cubit/Bloc
   CertificatesUtils(
     ['figma, clean code, solid principles'],
     name: 'Courses in progress',
-    image: '/images/background.jpg',
+    image: '/images/aboutme/learn.png',
     link: ' ',
     dateOfCompletion: "2024",
     length: 64,
-    description: '''MS Power BI Data Analyst on Coursera:
-    • preparing data for analysis with MS Excel,
-    • ETL data process in Power BI,
-    • data modeling in Power BI,
-    • data analysis & visualization in Power BI
-    • deploy and maintainPower BI Assets
+    description: '''
+• Flutter & Dart: SOLID Principles and Top Design Patterns
+• Flutter BLoC TDD & Clean Architecture | Project Based [2024]
+• Microsoft Power BI Data Analyst,
+• Figma 
     ''',
   ),
 ];

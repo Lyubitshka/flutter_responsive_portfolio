@@ -26,14 +26,16 @@ class _CertificatesTabState extends State<CertificatesTab> {
       width: 100.sw,
       color: bgColor,
       padding: EdgeInsets.only(
+          top: 42,
           left: screenWidth < 1200 ? 8.sw : 15.sw,
           right: screenWidth < 1200 ? 8.sw : 15.sw),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'My Certificates',
             style: GoogleFonts.josefinSans(
-              fontSize: 32,
+              fontSize: 36,
               fontWeight: FontWeight.w900,
               color: primaryColor,
             ),
@@ -43,59 +45,51 @@ class _CertificatesTabState extends State<CertificatesTab> {
             itemCount: certificatesUtils.length,
             reverse: true,
             itemBuilder: (context, index) {
-              if (index == 0) {
-                return CertificatesTimeline(
-                  isFirst: false,
-                  isLast: true,
-                  isPast: false,
-                  startChild: CertificateCard(
-                    isPast: true,
-                    isStart: true,
-                    image: certificatesUtils[index].image,
-                    title: certificatesUtils[index].name,
-                    description: certificatesUtils[index].description,
-                  ),
-                  endChild: CertificateDate(
-                    isStart: false,
-                    date: certificatesUtils[index].dateOfCompletion,
-                  ),
-                );
-              }
-              if (index.isEven) {
-                return CertificatesTimeline(
-                  isFirst: false,
-                  isLast: false,
-                  isPast: false,
-                  startChild: CertificateCard(
-                    isPast: false,
-                    isStart: true,
-                    image: certificatesUtils[index].image,
-                    title: certificatesUtils[index].name,
-                    description: certificatesUtils[index].description,
-                  ),
-                  endChild: CertificateDate(
-                    isStart: false,
-                    date: certificatesUtils[index].dateOfCompletion,
-                  ),
-                );
-              } else {
-                return CertificatesTimeline(
-                  isFirst: false,
-                  isLast: false,
-                  isPast: false,
-                  startChild: CertificateDate(
-                    isStart: true,
-                    date: certificatesUtils[index].dateOfCompletion,
-                  ),
-                  endChild: CertificateCard(
-                    isPast: false,
-                    isStart: false,
-                    image: certificatesUtils[index].image,
-                    title: certificatesUtils[index].name,
-                    description: certificatesUtils[index].description,
-                  ),
-                );
-              }
+              return Card(
+                surfaceTintColor: Colors.transparent,
+                color: bgColor,
+                margin: EdgeInsets.only(
+                  bottom: 20,
+                  right: screenWidth > 600 ? 12.sw : 8.sw,
+                  left: 12.sw,
+                ),
+                elevation: 4,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      certificatesUtils[index].image,
+                      width: double.infinity,
+                      height: 200,
+                    ),
+                    ListTile(
+                      leading: const Icon(Icons.verified, color: primaryColor),
+                      title: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                            alignment: Alignment.centerLeft),
+                        child: Text(
+                          certificatesUtils[index].name,
+                          style: GoogleFonts.josefinSans(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w900,
+                            color: primaryColor,
+                          ),
+                        ),
+                      ),
+                      subtitle: Text(
+                        '${certificatesUtils[index].description}',
+                        style: GoogleFonts.josefinSans(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: secondaryColor,
+                        ),
+                      ),
+                      isThreeLine: true,
+                    ),
+                  ],
+                ),
+              );
             },
           ),
         ],

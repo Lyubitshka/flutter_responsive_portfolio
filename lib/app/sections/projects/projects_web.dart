@@ -19,30 +19,35 @@ class _ProjectsWebState extends State<ProjectsWeb> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Container(
+      // constraints: const BoxConstraints(maxHeight: double.infinity),
       // height: double.infinity,
       width: 100.sw,
       color: bgColor,
       padding: EdgeInsets.only(top: 6.sh),
-      // margin: EdgeInsets.only(bottom: 10.sh),
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'My Projects',
-            style: GoogleFonts.josefinSans(
-              fontSize: 42,
-              fontWeight: FontWeight.w800,
-              color: primaryColor,
+          Padding(
+            padding: EdgeInsets.only(left: 15.sw),
+            child: Text(
+              'My Projects',
+              style: GoogleFonts.josefinSans(
+                fontSize: 48,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+              ),
             ),
           ),
-          SizedBox(height: 2.sh),
-          Text(
-            'Provide Wide Range of Ideas',
-            textAlign: TextAlign.center,
-            style: GoogleFonts.josefinSans(
-              fontSize: 32,
-              fontWeight: FontWeight.w500,
-              color: secondaryColor,
+          Padding(
+            padding: EdgeInsets.only(left: 15.sw),
+            child: Text(
+              'select card for more details',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.josefinSans(
+                fontSize: 32,
+                fontWeight: FontWeight.w400,
+                color: secondaryColor,
+              ),
             ),
           ),
           Container(
@@ -110,9 +115,6 @@ class _ProjectsWebState extends State<ProjectsWeb> {
           },
           child: Image.asset(
             projectUtils[index].projectGridImg,
-            // color: const Color.fromARGB(62, 2, 2, 2).withOpacity(0.5),
-            // colorBlendMode: BlendMode.modulate,
-            // scale: 2,
           ),
 
           // Text(

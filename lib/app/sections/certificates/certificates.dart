@@ -9,7 +9,7 @@ class Certificates extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Responsive(
-      mobile: CertificatesWeb(),
+      mobile: CertificatesTab(),
       tablet: CertificatesTab(),
       web: CertificatesWeb(),
     );

@@ -35,20 +35,20 @@ class _CertificatesWebState extends State<CertificatesWeb> {
         // right: screenWidth > 1450 ? 35.sw : 25.sw
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'My Certificates',
             style: GoogleFonts.josefinSans(
-              fontSize: 42,
-              fontWeight: FontWeight.w800,
+              fontSize: 48,
+              fontWeight: FontWeight.w900,
               color: primaryColor,
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(
               top: 12,
-              left: 8,
-              right: 8,
+              right: 30,
             ),
             child: Text(
               certifisatesDescription,
@@ -57,7 +57,6 @@ class _CertificatesWebState extends State<CertificatesWeb> {
                 fontWeight: FontWeight.w400,
                 color: secondaryColor,
               ),
-              textAlign: TextAlign.center,
             ),
           ),
           ListView.builder(

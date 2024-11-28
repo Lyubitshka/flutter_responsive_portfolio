@@ -1,5 +1,7 @@
 
-# 🛠️ under construction 🛠️
+
+ > [!NOTE]
+ > # 🛠️ under construction 🛠️
 
 ## Flutter Portfolio Website 🌐  
 
@@ -35,7 +37,10 @@ The application uses **BLoC** for state management to ensure a clean and scalabl
 4. Run the app on your emulator.
    
 ![Zrzut ekranu 2024-11-28 135634](https://github.com/user-attachments/assets/274681cc-b3c0-44b0-90ab-4c564ad3683c)
-
    
 ![Zrzut ekranu 2024-11-28 135703](https://github.com/user-attachments/assets/e17b41ab-97e3-4b1f-a93b-2ce92f0dba5c)
+
+![Zrzut ekranu 2024-11-28 155747](https://github.com/user-attachments/assets/13eb5aad-6675-486d-90c8-c86f6d64781c)
+
+![Zrzut ekranu 2024-11-28 155910](https://github.com/user-attachments/assets/ae95f665-2562-44d0-8f62-1221f93ea35a)
 

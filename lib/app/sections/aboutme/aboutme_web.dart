@@ -43,7 +43,7 @@ class AboutMeWeb extends StatelessWidget {
                     child: Text(
                       aboutMe2,
                       textAlign: TextAlign.center,
-                      style: textTab,
+                      style: textMediumWeb,
                     ),
                   ),
                 ),
@@ -68,16 +68,11 @@ class AboutMeWeb extends StatelessWidget {
             child: Text(
               aboutMe1,
               textAlign: TextAlign.center,
-              style: textTab,
+              style: textMediumWeb,
             ),
           ),
           Gap(28),
-          // Image.asset(
-          //   'images/div.png',
-          //   fit: BoxFit.contain, // Dopasowanie obrazu
-          //   width: double.infinity, // Szerokość obrazu
-          //   height: 80, // Wysokość obrazu
-          // ),
+
           Divider(
             height: 4,
             endIndent: 20.sw,

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:web_presentation/app/sections/certificates/widgets/certificate_card.dart';
@@ -8,6 +9,7 @@ import 'package:web_presentation/app/sections/certificates/widgets/certificates_
 import 'package:web_presentation/app/sections/certificates/widgets/certificates_timeline.dart';
 import 'package:web_presentation/app/utils/certificates_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
+import 'package:web_presentation/core/constants/fonts.dart';
 
 import '../../../core/constants/constants.dart';
 
@@ -35,27 +37,11 @@ class _CertificatesWebState extends State<CertificatesWeb> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'My Certificates',
-            style: GoogleFonts.josefinSans(
-              fontSize: 42,
-              fontWeight: FontWeight.w700,
-              color: primaryColor,
-            ),
-          ),
+          Text('My Certificates', style: titleWeb),
+          Gap(12),
           Padding(
-            padding: const EdgeInsets.only(
-              top: 12,
-              right: 30,
-            ),
-            child: Text(
-              certifisatesDescription,
-              style: GoogleFonts.josefinSans(
-                fontSize: 18,
-                fontWeight: FontWeight.w400,
-                color: secondaryColor,
-              ),
-            ),
+            padding: EdgeInsets.only(right: 25.sw),
+            child: Text(certifisatesDescription, style: textSmallWeb),
           ),
           ListView.builder(
               shrinkWrap: true,

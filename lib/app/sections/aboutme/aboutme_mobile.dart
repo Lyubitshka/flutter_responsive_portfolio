@@ -110,44 +110,4 @@ class AboutMeMobile extends StatelessWidget {
       ),
     );
   }
-
-  Widget hobbyTag(int index) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            hobbies[index].bgColor,
-            hobbies[index].bgColor.withOpacity(0.6)
-          ],
-        ),
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            spreadRadius: 1,
-            blurRadius: 5,
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Icon(
-              hobbies[index].icon,
-              color: Colors.white,
-              size: 30,
-            ),
-            const Gap(10),
-            Text(
-              hobbies[index].name,
-              style: GoogleFonts.josefinSans(color: Colors.white, fontSize: 20),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }

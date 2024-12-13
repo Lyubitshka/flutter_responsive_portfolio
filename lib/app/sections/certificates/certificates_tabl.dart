@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:web_presentation/app/utils/certificates_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
+import 'package:web_presentation/core/constants/constants.dart';
 import 'package:web_presentation/core/constants/fonts.dart';
 
 class CertificatesTab extends StatefulWidget {
@@ -30,6 +32,14 @@ class _CertificatesTabState extends State<CertificatesTab> {
             child: Text(
               'My Certificates',
               style: screenWidth < 800 ? titleMobile : titleTab,
+            ),
+          ),
+          Gap(8),
+          Padding(
+            padding: EdgeInsets.only(left: 15.sw, right: 15.sw),
+            child: Text(
+              certifisatesDescription,
+              style: screenWidth < 800 ? textSmallMobile : textSmallTab,
             ),
           ),
           ListView.builder(

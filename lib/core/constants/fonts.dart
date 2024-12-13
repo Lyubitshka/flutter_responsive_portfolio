@@ -33,13 +33,18 @@ TextStyle titleTab = GoogleFonts.josefinSans(
 );
 
 TextStyle subtitleTab = GoogleFonts.josefinSans(
-  fontSize: 24,
-  fontWeight: FontWeight.w500,
+  fontSize: 20,
+  fontWeight: FontWeight.w400,
   color: secondaryColor,
 );
 TextStyle textTab = GoogleFonts.josefinSans(
   fontSize: 22,
   fontWeight: FontWeight.w400,
+  color: secondaryColor,
+);
+TextStyle textSmallTab = GoogleFonts.josefinSans(
+  fontSize: 18,
+  fontWeight: FontWeight.w300,
   color: secondaryColor,
 );
 
@@ -54,7 +59,19 @@ TextStyle subtitleWeb = GoogleFonts.josefinSans(
   fontWeight: FontWeight.w500,
   color: secondaryColor,
 );
+TextStyle textSmallWeb = GoogleFonts.josefinSans(
+  fontSize: 20,
+  fontWeight: FontWeight.w300,
+  color: secondaryColor,
+);
 
-TextStyle textWeb = GoogleFonts.josefinSans(fontSize: 15);
+TextStyle textWeb = GoogleFonts.josefinSans(
+  fontSize: 18,
+  fontWeight: FontWeight.w300,
+);
+TextStyle textMediumWeb = GoogleFonts.josefinSans(
+  fontSize: 30,
+  fontWeight: FontWeight.w300,
+);
 
 TextStyle specialTxtWeb = GoogleFonts.chango(fontSize: 20, color: primaryColor);

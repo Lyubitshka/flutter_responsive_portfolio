@@ -17,9 +17,11 @@ class EduAndWorkWeb extends StatefulWidget {
 class _EduAndWorkWebState extends State<EduAndWorkWeb> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
       width: 100.sw,
-      height: 55.sh,
+      height: screenWidth > 1200 ? 50.sh : 55.sh,
       color: bgColor,
       padding: EdgeInsets.symmetric(vertical: 42),
       child: Column(

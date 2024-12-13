@@ -48,9 +48,9 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
               crossAxisCount: 2,
               shrinkWrap: true,
               primary: false,
-              padding: EdgeInsets.all(2.sh),
-              crossAxisSpacing: 2.sh,
-              mainAxisSpacing: 2.sh,
+              padding: EdgeInsets.all(3.sh),
+              crossAxisSpacing: 3.sh,
+              mainAxisSpacing: 3.sh,
               children: List.generate(6, (index) {
                 return projectCard(index);
               }),
@@ -67,7 +67,7 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
         showProjectDetails(index);
       },
       child: Container(
-        height: 100.sh,
+        height: 70.sh,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: bgColor,

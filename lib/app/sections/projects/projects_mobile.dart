@@ -68,7 +68,6 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
       },
       child: Container(
         height: 100.sh,
-        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: bgColor,
@@ -155,6 +154,9 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
             description: projectUtils[index].description,
             link: projectUtils[index].gitLink,
             imgAssets: projectUtils[index].imgAsset,
+            title: projectUtils[index].title,
+            techStack: projectUtils[index].techStack,
+            icon: projectUtils[index].icon,
           ),
         ),
       ),

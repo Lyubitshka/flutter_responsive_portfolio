@@ -16,7 +16,7 @@ class FooterMobile extends StatelessWidget {
 
     return Container(
       width: 100.sw,
-      height: screenWidth < 600 ? 40.sh : 20.sh,
+      height: screenWidth < 600 ? 40.sh : 30.sh,
       color: textColor,
       child: Padding(
         padding: EdgeInsets.only(
@@ -24,7 +24,7 @@ class FooterMobile extends StatelessWidget {
             top: 4.sh,
             right: screenWidth < 1000 ? 80 : 150),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Center(
               child: SizedBox(
@@ -35,43 +35,45 @@ class FooterMobile extends StatelessWidget {
                     Text(
                       'Anna\'s Portfolio',
                       style: GoogleFonts.chango(
-                        fontSize: 22,
+                        fontSize: 20,
                         color: Colors.white60,
                       ),
                     ),
                     Text(
-                        ' this website is made from stratch by me, if you like it let\'s talk',
-                        style: GoogleFonts.josefinSans(color: Colors.white30))
+                      ' this website is made from stratch by me, if you like it let\'s talk',
+                      style: GoogleFonts.josefinSans(
+                        color: Colors.white30,
+                      ),
+                      textAlign: TextAlign.center,
+                    )
                   ],
                 ),
               ),
             ),
-            const Gap(15),
+            // const Gap(12),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ...NavBarUtils.names
-                    .asMap()
-                    .entries
-                    .map((e) => NavBarFooterButton(
-                          label: e.value,
-                          index: e.key,
-                          icon: NavBarUtils.icons[e.key],
-                        ))
+                ...NavBarUtils.names.asMap().entries.map(
+                      (e) => NavBarFooterButton(
+                        label: e.value,
+                        index: e.key,
+                        icon: NavBarUtils.icons[e.key],
+                      ),
+                    ),
               ],
             ),
-            const Gap(15),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 50),
               child: Divider(
                 thickness: 0.8,
-                color: Colors.white38,
+                color: Colors.white24,
               ),
             ),
-            // const Gap(5),
             Text(
               footerCopyright,
-              style: GoogleFonts.josefinSans(color: Colors.white24),
+              style:
+                  GoogleFonts.josefinSans(color: Colors.white24, fontSize: 10),
             )
           ],
         ),

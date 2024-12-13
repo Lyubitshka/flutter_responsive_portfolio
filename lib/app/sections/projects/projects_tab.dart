@@ -23,9 +23,7 @@ class _ProjectsTabState extends State<ProjectsTab> {
     return Container(
       width: 100.sw,
       color: bgColor,
-      padding: EdgeInsets.only(
-        top: 5.sh,
-      ),
+      padding: EdgeInsets.only(top: 5.sh),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -72,7 +70,7 @@ class _ProjectsTabState extends State<ProjectsTab> {
       },
       child: Container(
         height: 50.sh,
-        margin: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(1.sh),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: bgColor,

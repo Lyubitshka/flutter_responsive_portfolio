@@ -22,14 +22,13 @@ class FooterWeb extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(
             left: screenWidth < 1000 ? 80 : 150,
-            top: 4.sh,
+            top: 2.sh,
             right: screenWidth < 1000 ? 80 : 150),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Center(
               child: SizedBox(
-                // width: screenWidth < 1300 ? 150 : 300,
                 child: Column(
                   children: [
                     Text(
@@ -46,27 +45,24 @@ class FooterWeb extends StatelessWidget {
                 ),
               ),
             ),
-            const Gap(15),
+            const Gap(25),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ...NavBarUtils.names
-                    .asMap()
-                    .entries
-                    .map((e) => NavBarFooterButton(
-                          label: e.value,
-                          index: e.key,
-                          icon: NavBarUtils.icons[e.key],
-                        ))
+                ...NavBarUtils.names.asMap().entries.map(
+                      (e) => NavBarFooterButton(
+                        label: e.value,
+                        index: e.key,
+                        icon: NavBarUtils.icons[e.key],
+                      ),
+                    ),
               ],
             ),
-            const Gap(15),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 50),
-              child: Divider(
-                thickness: 0.8,
-                color: Colors.white38,
-              ),
+            Divider(
+              indent: 25.sw,
+              endIndent: 25.sw,
+              thickness: 0.8,
+              color: Colors.white24,
             ),
             // const Gap(5),
             Text(

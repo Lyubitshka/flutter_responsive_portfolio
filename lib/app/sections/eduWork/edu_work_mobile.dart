@@ -2,8 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:web_presentation/app/utils/edy_and_work_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
+import 'package:web_presentation/core/constants/fonts.dart';
 
 class EduWorkMobile extends StatefulWidget {
   const EduWorkMobile({super.key});
@@ -17,24 +19,18 @@ class _EduWorkMobileState extends State<EduWorkMobile> {
   Widget build(BuildContext context) {
     return Container(
       color: bgColor,
+      padding: EdgeInsets.symmetric(vertical: 42),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Education & Work',
-              style: GoogleFonts.josefinSans(
-                fontSize: 32,
-                fontWeight: FontWeight.w700,
-                color: primaryColor,
-              ),
-            ),
+            padding: EdgeInsets.only(left: 15.sw),
+            child: Text('Education & Work', style: titleMobile),
           ),
-          const Gap(20),
+          const Gap(10),
           CarouselSlider(
             options: CarouselOptions(
-              height: 400,
+              height: 420,
               viewportFraction: 0.8,
               enableInfiniteScroll: true,
               // enlargeCenterPage: true,
@@ -63,7 +59,7 @@ class _EduWorkMobileState extends State<EduWorkMobile> {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -85,23 +81,19 @@ class _EduWorkMobileState extends State<EduWorkMobile> {
             const SizedBox(height: 10),
             Text(
               item.title,
-              style: GoogleFonts.josefinSans(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-              ),
+              style: textMobile,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 10),
+            Gap(10),
             Text(
               item.subtitle,
-              style:
-                  GoogleFonts.josefinSans(fontSize: 16, color: secondaryColor),
+              style: subtitleMobile,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 10),
+            Gap(10),
             Text(
               item.description,
-              style: GoogleFonts.josefinSans(fontSize: 14),
+              style: textSmallMobile,
               textAlign: TextAlign.center,
             ),
           ],

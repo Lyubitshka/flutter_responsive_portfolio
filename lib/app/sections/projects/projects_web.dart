@@ -54,7 +54,7 @@ class _ProjectsWebState extends State<ProjectsWeb> {
                 itemCount: 6,
                 padding: EdgeInsets.only(top: 4.sh, left: 15.sw, right: 15.sw),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: screenSize.width < 1200 ? 2 : 3,
+                  crossAxisCount: screenSize.width < 1000 ? 2 : 3,
                   mainAxisExtent: 20.sh,
                   crossAxisSpacing: 15,
                   mainAxisSpacing: 30,
@@ -142,9 +142,11 @@ class _ProjectsWebState extends State<ProjectsWeb> {
                       projectUtils[index].name,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.josefinSans(
-                        fontSize: 32,
-                        fontWeight: FontWeight.w700,
-                        color: isHovered[index] ? primaryColor : secondaryColor,
+                        fontSize: 28,
+                        fontWeight: FontWeight.w600,
+                        color: isHovered[index]
+                            ? primaryColor
+                            : const Color.fromARGB(255, 15, 35, 31),
                       ),
                     ),
             ],

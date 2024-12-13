@@ -23,17 +23,16 @@ class _EduAndWorkTabState extends State<EduAndWorkTab> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Education & Work',
-              style: GoogleFonts.josefinSans(
-                fontSize: 32,
-                fontWeight: FontWeight.w700,
-                color: primaryColor,
+            padding: const EdgeInsets.symmetric(vertical: 42),
+            child: Padding(
+              padding: EdgeInsets.only(left: 15.sw),
+              child: Text(
+                'Education & Work',
+                style: titleTab,
               ),
             ),
           ),
-          const Gap(20),
+          const Gap(12),
           CarouselSlider(
             options: CarouselOptions(
               height: 400,
@@ -58,14 +57,16 @@ class _EduAndWorkTabState extends State<EduAndWorkTab> {
 
   Widget _buildEduWorkCard(dynamic item) {
     return Card(
-      margin: const EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(14.0),
       elevation: 5,
       color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 26,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -84,13 +85,10 @@ class _EduAndWorkTabState extends State<EduAndWorkTab> {
                 ),
               ],
             ),
-            const SizedBox(height: 10),
+            Gap(22),
             Text(
               item.title,
-              style: GoogleFonts.josefinSans(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-              ),
+              style: subtitleTab,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 10),

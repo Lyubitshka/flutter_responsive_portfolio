@@ -45,12 +45,12 @@ class _NavBarFooterButtonState extends State<NavBarFooterButton> {
           child: screenWidth < 800
               ? Icon(
                   widget.icon,
-                  size: 30,
-                  color: isHover ? primaryColor : Colors.white70,
+                  size: 22,
+                  color: isHover ? primaryColor : Colors.white60,
                 )
               : Text(widget.label,
                   style: GoogleFonts.josefinSans(
-                      color: isHover ? primaryColor : Colors.white70,
+                      color: isHover ? primaryColor : Colors.white60,
                       fontWeight: FontWeight.w300,
                       fontSize: screenWidth < 1200 ? 15 : 20)),
         ),

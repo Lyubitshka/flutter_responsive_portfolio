@@ -41,7 +41,7 @@ class _NavBarActionButtonState extends State<NavBarActionButton> {
               style: GoogleFonts.josefinSans(
                   color: isHover ? primaryColor : Colors.black,
                   fontWeight: FontWeight.w300,
-                  fontSize: screenWidth < 1200 ? 15 : 20)),
+                  fontSize: 20)),
         ),
       ),
     );

@@ -27,9 +27,9 @@ List<EduWorkUtils> eduworkUtils = [
   EduWorkUtils(
     date: '2018\n2022',
     description:
-        'As an Engineer on a building site in a worldwide construction company, I get along with corporate compliance and procedures, dealing and talking with different groups of business partners and preparing various kinds of documentation. I am always positive, and accountable and I have a problem-solving mindset. I am an open-minded person and have a proactive approach to life. I am always open to learning, adaptation, and critical thinking, and also strongly focused on business goals.',
+        'As an Engineer in a worldwide construction company, I get along with corporate compliance and procedures, dealing and talking with different groups of business partners and preparing various kinds of documentation. I am always positive, and accountable and I have a problem-solving mindset. I am an open-minded person and have a proactive approach to life. I am always open to learning, adaptation, and critical thinking, and also strongly focused on business goals.',
     subtitle: "Eurovia Polska S.A.",
-    title: 'Estimator Engineer',
+    title: 'Cost Estimation Engineer',
     icon: Icons.work_sharp,
   ),
 ];

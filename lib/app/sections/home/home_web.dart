@@ -27,7 +27,6 @@ class _HomeWebState extends State<HomeWeb> {
       child: Stack(
         children: [
           Positioned(
-            // right: -32.sw,
             right: screenSize.width < 1024 ? -22.sw : -30.sw,
             top: 90,
             child: Image.asset(

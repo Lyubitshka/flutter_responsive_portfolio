@@ -39,8 +39,11 @@ class _ProjectCardDialogDialogState extends State<ProjectCardDialog> {
 
     return SingleChildScrollView(
       child: Container(
-        color: bgColor,
-        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(30)),
+          color: bgColor,
+        ),
+        // color: bgColor,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
           child: Row(

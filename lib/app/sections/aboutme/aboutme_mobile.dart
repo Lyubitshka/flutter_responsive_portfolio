@@ -5,142 +5,145 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:web_presentation/app/utils/about_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
 import 'package:web_presentation/core/constants/constants.dart';
+import 'package:web_presentation/core/constants/fonts.dart';
 
 class AboutMeMobile extends StatelessWidget {
   const AboutMeMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       width: 100.sw,
       color: bgColor,
-      padding: const EdgeInsets.only(top: 25, bottom: 20),
+      padding: const EdgeInsets.only(top: 42, bottom: 20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'After hours',
-            style: GoogleFonts.josefinSans(
-              fontSize: 42,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-            ),
+          Padding(
+            padding: EdgeInsets.only(left: 15.sw),
+            child: Text('After hours', style: titleTab),
           ),
           const Gap(5),
-          Container(
-            // width: 480,
-            // height: 400,
-            // clipBehavior: Clip.antiAlias,
-            decoration: BoxDecoration(
-                color: bgColor,
-                borderRadius: const BorderRadius.all(Radius.circular(12)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.shade500,
-                    spreadRadius: 1,
-                    blurRadius: 15,
-                    offset: const Offset(4, 4),
-                  ),
-                  const BoxShadow(
-                    color: Colors.white,
-                    spreadRadius: 3,
-                    blurRadius: 15,
-                    offset: Offset(-6, -6),
-                  ),
-                ]),
-            child: Stack(
-              clipBehavior: Clip.none,
-              alignment: AlignmentDirectional.topCenter,
-              children: [
-                SizedBox(
-                  width: 340,
-                  child: Padding(
-                    padding: const EdgeInsets.all(18.0),
-                    child: Text(
-                      aboutMe1,
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.josefinSans(
-                        fontSize: 22,
-                        // fontWeight: FontWeight.w500,
-                        color: secondaryColor,
-                      ),
-                    ),
+          Stack(
+            clipBehavior: Clip.none,
+            alignment: AlignmentDirectional.topCenter,
+            children: [
+              Image.asset(
+                'images/aboutme/yoga.png',
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: screenWidth < 800 ? 10.sw : 20.sw,
+                    vertical: 25),
+                child: Container(
+                  color: bgColor.withOpacity(0.4),
+                  child: Text(
+                    aboutMe2,
+                    textAlign: TextAlign.center,
+                    style: textTab,
                   ),
                 ),
-                Positioned(
-                  top: 190,
-                  child: Image.asset(
-                    'images/aboutme/learn.png',
-                  ),
-                ),
-              ],
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Center(
+              child: Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                alignment: WrapAlignment.center,
+                children:
+                    hobbies.map((hobby) => animatedHobbyChip(hobby)).toList(),
+              ),
             ),
           ),
-          Stack(
-              clipBehavior: Clip.none,
-              alignment: AlignmentDirectional.topCenter,
-              children: [
-                Image.asset(
-                  'images/aboutme/yoga.png',
-                ),
-                Positioned(
-                  top: 420,
-                  child: SizedBox(
-                    // height: 320,
-                    width: 420,
-                    child: Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: Text(
-                        aboutMe2,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.josefinSans(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
-                          color: secondaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ]),
-          SizedBox(
-            height: 630,
-            width: 350,
-            child: ListView.builder(
-                itemCount: hobbies.length,
-                itemBuilder: (context, index) {
-                  return hobbyTag(index);
-                }),
+          Gap(20),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: screenWidth < 800 ? 10.sw : 20.sw,
+            ),
+            child: Text(
+              aboutMe1,
+              textAlign: TextAlign.center,
+              style: textTab,
+            ),
           ),
-          // const Padding(padding: EdgeInsets.all(10))
+          Gap(25),
+          Divider(
+            height: 4,
+            endIndent: 12.sw,
+            indent: 12.sw,
+            color: primaryColor,
+          ),
         ],
       ),
     );
   }
 
-  hobbyTag(int index) {
+  Widget animatedHobbyChip(HobbyTagDetails hobby) {
+    return MouseRegion(
+      onEnter: (_) {},
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 300),
+        decoration: BoxDecoration(
+          color: hobby.bgColor.withOpacity(0.9),
+          borderRadius: BorderRadius.circular(30),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              hobby.icon,
+              color: Colors.white,
+              size: 20,
+            ),
+            const Gap(8),
+            Text(
+              hobby.name,
+              style: GoogleFonts.josefinSans(color: Colors.white, fontSize: 14),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget hobbyTag(int index) {
     return Container(
-      // height: 420,
-      margin: const EdgeInsets.only(bottom: 10),
-      // padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-          color: hobbies[index].bgColor.withOpacity(0.9),
-          borderRadius: BorderRadius.circular(20)),
+        gradient: LinearGradient(
+          colors: [
+            hobbies[index].bgColor,
+            hobbies[index].bgColor.withOpacity(0.6)
+          ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            spreadRadius: 1,
+            blurRadius: 5,
+          ),
+        ],
+      ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              child: Icon(
-                hobbies[index].icon,
-                color: Colors.white,
-                size: 35,
-              ),
+            Icon(
+              hobbies[index].icon,
+              color: Colors.white,
+              size: 30,
             ),
-            // const Gap(10),
+            const Gap(10),
             Text(
               hobbies[index].name,
-              style: GoogleFonts.josefinSans(color: Colors.white, fontSize: 22),
+              style: GoogleFonts.josefinSans(color: Colors.white, fontSize: 20),
+              textAlign: TextAlign.center,
             ),
           ],
         ),

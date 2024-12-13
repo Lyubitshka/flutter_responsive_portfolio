@@ -99,10 +99,10 @@ String animationtxt2 = " UI/UX Designer";
 String animationtxt3 = " Web Developer";
 
 String aboutMe1 =
-    'Staying up to date with newest resolutions in programming languages, frameworks and libraries which I\'m interested with.';
+    '... and staying up to date with newest resolutions in programming languages, frameworks and libraries which I\'m interested with.';
 
 String aboutMe2 =
-    'I enjoy working out at home while watching engaging content online related to my hobbies.';
+    'I enjoy working out at home while watching engaging content online related to my hobbies...';
 
 //
 // String contactHeadding = "Let’s try my service now!";

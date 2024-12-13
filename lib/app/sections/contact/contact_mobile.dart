@@ -8,14 +8,14 @@ import 'package:web_presentation/app/utils/contact_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
 import 'package:web_presentation/core/constants/fonts.dart';
 
-class ContactWeb extends StatefulWidget {
-  const ContactWeb({super.key});
+class ContactMobile extends StatefulWidget {
+  const ContactMobile({super.key});
 
   @override
-  State<ContactWeb> createState() => _ContactWebState();
+  State<ContactMobile> createState() => _ContactMobileState();
 }
 
-class _ContactWebState extends State<ContactWeb> {
+class _ContactMobileState extends State<ContactMobile> {
   bool isHovered = false;
   List<bool> isTab = List.generate(5, (index) => false);
 
@@ -24,24 +24,49 @@ class _ContactWebState extends State<ContactWeb> {
     return Container(
       width: 100.sw,
       color: bgColor,
-      padding: EdgeInsets.only(top: 5.sh, left: 15.sw, right: 15.sw),
+      padding: EdgeInsets.only(top: 5.sh, bottom: 20),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Let\'s get in touch', style: titleWeb),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.sw),
+            child: Text('Let\'s get in touch', style: titleMobile),
+          ),
           Gap(1.sh),
-          Text('Any Questions? Feel Free to Contact',
-              textAlign: TextAlign.start, style: subtitleWeb),
-          Gap(5),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.sw),
+            child: Text('Any Questions? Feel Free to Contact',
+                textAlign: TextAlign.start, style: subtitleMobile),
+          ),
           Container(
-            height: 50.sh,
+            height: 80.sh,
             padding: EdgeInsets.symmetric(horizontal: 5.sh),
             child: ListView.builder(
-              shrinkWrap: true,
+              // shrinkWrap: true,
               itemCount: contactUtils.length,
               itemBuilder: (context, index) {
-                return contactUtils[index].isLogo!
-                    ? InkWell(
+                return !contactUtils[index].isLogo!
+                    ? Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 12),
+                        margin: const EdgeInsets.symmetric(vertical: 5),
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(45),
+                          ),
+                          border: Border.all(
+                              color: secondaryColor.withOpacity(0.5)),
+                        ),
+                        child: ContactCard(
+                          title: contactUtils[index].title,
+                          desc: contactUtils[index].description,
+                          icon: contactUtils[index].icon,
+                          logoImg: contactUtils[index].logoImg,
+                          isLogo: contactUtils[index].isLogo,
+                        ),
+                      )
+                    : InkWell(
                         onTap: () async {
                           final Uri url = Uri.parse(contactUtils[index].link!);
                           if (await canLaunchUrl(url)) {
@@ -56,7 +81,6 @@ class _ContactWebState extends State<ContactWeb> {
                           });
                         },
                         child: Container(
-                          // width: 10.sw,
                           padding: const EdgeInsets.symmetric(
                               vertical: 8, horizontal: 12),
                           margin: const EdgeInsets.symmetric(vertical: 5),
@@ -75,26 +99,7 @@ class _ContactWebState extends State<ContactWeb> {
                               isLogo: contactUtils[index].isLogo,
                             ),
                           ),
-                        ))
-                    : Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 12),
-                        margin: const EdgeInsets.symmetric(vertical: 5),
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(45),
-                          ),
-                          border: Border.all(
-                              color: secondaryColor.withOpacity(0.5)),
-                        ),
-                        child: ContactCard(
-                          title: contactUtils[index].title,
-                          desc: contactUtils[index].description,
-                          icon: contactUtils[index].icon,
-                          logoImg: contactUtils[index].logoImg,
-                          isLogo: contactUtils[index].isLogo,
-                        ),
-                      );
+                        ));
               },
             ),
           ),

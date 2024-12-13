@@ -6,6 +6,7 @@ import 'package:web_presentation/app/sections/projects/widgets/project_card_dial
 import 'package:web_presentation/app/utils/projects_utils.dart';
 import 'package:web_presentation/core/animations/entrance_fader.dart';
 import 'package:web_presentation/core/color/colors.dart';
+import 'package:web_presentation/core/constants/fonts.dart';
 
 class ProjectsTab extends StatefulWidget {
   const ProjectsTab({super.key});
@@ -22,128 +23,128 @@ class _ProjectsTabState extends State<ProjectsTab> {
     return Container(
       width: 100.sw,
       color: bgColor,
-      padding: EdgeInsets.only(top: 5.sh, left: 5.sw, right: 5.sw),
+      padding: EdgeInsets.only(
+        top: 5.sh,
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'My Projects',
-            style: GoogleFonts.josefinSans(
-              fontSize: 36,
-              fontWeight: FontWeight.w800,
-              color: primaryColor,
+          Padding(
+            padding: EdgeInsets.only(left: 15.sw),
+            child: Text(
+              'My Projects',
+              style: titleTab,
             ),
           ),
-          SizedBox(height: 1.sh),
+          Gap(1.sh),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.sw),
+            padding: EdgeInsets.only(left: 15.sw),
             child: Text(
-              'Provide Wide Range of Ideas',
+              'select card for more details',
               textAlign: TextAlign.center,
-              style: GoogleFonts.josefinSans(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-                color: secondaryColor,
-              ),
+              style: subtitleTab,
             ),
           ),
           EntranceFader(
             delay: const Duration(seconds: 1),
             duration: const Duration(seconds: 2),
             child: GridView.count(
-              crossAxisCount: 2,
+              crossAxisCount: 3,
               shrinkWrap: true,
               primary: false,
               padding: EdgeInsets.all(5.sh),
               crossAxisSpacing: 4.sh,
               mainAxisSpacing: 4.sh,
               children: List.generate(6, (index) {
-                return ProjectCard(index);
+                return projectCard(index);
               }),
             ),
           )
-          // SizedBox(
-          //   height: 100.sh,
-          //   // width: 100.sw,
-          //   child: EntranceFader(
-          //     delay: const Duration(seconds: 1),
-          //     duration: const Duration(seconds: 2),
-          //     child: GridView.builder(
-          //       itemCount: 6,
-          //       padding: EdgeInsets.only(top: 4.sh, left: 15.sw, right: 15.sw),
-          //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          //         crossAxisCount: 3,
-          //         mainAxisExtent: 20.sh,
-          //         crossAxisSpacing: 15,
-          //         mainAxisSpacing: 45,
-          //       ),
-          //       itemBuilder: ((context, index) {
-          //         return ProjectCard(index);
-          //       }),
-          //     ),
-          //   ),
-          // )
         ],
       ),
     );
   }
 
-  ProjectCard(int index) {
-    return Container(
-      height: 100.sh,
-      margin: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
+  Widget projectCard(int index) {
+    return GestureDetector(
+      onTap: () {
+        showProjectDetails(index);
+      },
+      child: Container(
+        height: 50.sh,
+        margin: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.white,
+          color: bgColor,
           boxShadow: [
-            const BoxShadow(
-              color: Colors.white,
-              spreadRadius: 1,
-              blurRadius: 15,
-              offset: Offset(-5, -5),
-            ),
             BoxShadow(
               color: Colors.grey.shade500,
               spreadRadius: 1,
-              blurRadius: 10,
+              blurRadius: 15,
               offset: const Offset(4, 4),
             ),
-          ]),
-      child: Container(
-        // margin: EdgeInsets.all(18),
-        // decoration: const BoxDecoration(
-        //   shape: BoxShape.circle,
-        //   color: Colors.amber,
-        // ),
+            const BoxShadow(
+              color: Colors.white,
+              spreadRadius: 3,
+              blurRadius: 15,
+              offset: Offset(-6, -6),
+            ),
+          ],
+        ),
         child: InkWell(
-            onHover: (value) {
-              setState(
-                () {
-                  isHovered[index] = value;
+          onHover: (value) {
+            setState(() {
+              isHovered[index] = value;
+            });
+          },
+          onTap: () {
+            showProjectDetails(index);
+          },
+          child: Stack(
+            alignment: AlignmentDirectional.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              MouseRegion(
+                onEnter: (_) {
+                  setState(() {
+                    isHovered[index] = true;
+                  });
                 },
-              );
-            },
-            // hoverDuration: Duration(seconds: 3),
-
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              // crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    showProjectDetails(index);
-                  },
-                  iconSize: 68,
-                  icon: Icon(projectUtils[index].icon),
+                onExit: (_) {
+                  setState(() {
+                    isHovered[index] = false;
+                  });
+                },
+                child: AnimatedScale(
+                  scale: isHovered[index] ? 1.2 : 1.0,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                  child: AnimatedOpacity(
+                    duration: const Duration(milliseconds: 300),
+                    opacity: isHovered[index] ? 1.0 : 0.5,
+                    child: CircleAvatar(
+                      radius: 50,
+                      backgroundImage:
+                          AssetImage(projectUtils[index].projectGridImg),
+                      backgroundColor: bgColor,
+                    ),
+                  ),
                 ),
-                const Gap(5),
-                Text(
-                  projectUtils[index].name,
-                  style: GoogleFonts.josefinSans(
-                      fontSize: 18, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            )),
+              ),
+              isHovered[index]
+                  ? Text('')
+                  : Text(
+                      projectUtils[index].name,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.josefinSans(
+                        fontSize: 26,
+                        fontWeight: FontWeight.w700,
+                        color: isHovered[index] ? primaryColor : secondaryColor,
+                      ),
+                    ),
+            ],
+          ),
+        ),
       ),
     );
   }

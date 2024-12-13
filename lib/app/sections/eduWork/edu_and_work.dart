@@ -11,7 +11,7 @@ class EduAndWork extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Responsive(
       mobile: EduWorkMobile(),
-      tablet: EduWorkTab(),
+      tablet: EduAndWorkTab(),
       web: EduAndWorkWeb(),
     );
   }

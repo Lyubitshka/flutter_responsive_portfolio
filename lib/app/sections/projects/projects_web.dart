@@ -6,6 +6,7 @@ import 'package:web_presentation/app/sections/projects/widgets/project_card_dial
 import 'package:web_presentation/app/utils/projects_utils.dart';
 import 'package:web_presentation/core/animations/entrance_fader.dart';
 import 'package:web_presentation/core/color/colors.dart';
+import 'package:web_presentation/core/constants/fonts.dart';
 
 class ProjectsWeb extends StatefulWidget {
   const ProjectsWeb({super.key});
@@ -32,11 +33,7 @@ class _ProjectsWebState extends State<ProjectsWeb> {
             padding: EdgeInsets.only(left: 15.sw),
             child: Text(
               'My Projects',
-              style: GoogleFonts.josefinSans(
-                fontSize: 42,
-                fontWeight: FontWeight.w700,
-                color: primaryColor,
-              ),
+              style: titleWeb,
             ),
           ),
           Padding(
@@ -44,11 +41,7 @@ class _ProjectsWebState extends State<ProjectsWeb> {
             child: Text(
               'select card for more details',
               textAlign: TextAlign.center,
-              style: GoogleFonts.josefinSans(
-                fontSize: 28,
-                fontWeight: FontWeight.w400,
-                color: secondaryColor,
-              ),
+              style: subtitleWeb,
             ),
           ),
           Container(
@@ -116,27 +109,44 @@ class _ProjectsWebState extends State<ProjectsWeb> {
             alignment: AlignmentDirectional.center,
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Positioned(
-                bottom: 12,
-                child: CircleAvatar(
-                  radius: 60,
-                  backgroundImage:
-                      AssetImage(projectUtils[index].projectGridImg),
-                  backgroundColor: bgColor,
-                ),
-              ),
-              Positioned(
-                top: 20,
-                child: Text(
-                  projectUtils[index].name,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.josefinSans(
-                    fontSize: 26,
-                    fontWeight: FontWeight.w700,
-                    color: isHovered[index] ? primaryColor : secondaryColor,
+              MouseRegion(
+                onEnter: (_) {
+                  setState(() {
+                    isHovered[index] = true;
+                  });
+                },
+                onExit: (_) {
+                  setState(() {
+                    isHovered[index] = false;
+                  });
+                },
+                child: AnimatedScale(
+                  scale: isHovered[index] ? 1.2 : 1.0,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                  child: AnimatedOpacity(
+                    duration: const Duration(milliseconds: 300),
+                    opacity: isHovered[index] ? 1.0 : 0.5,
+                    child: CircleAvatar(
+                      radius: 60,
+                      backgroundImage:
+                          AssetImage(projectUtils[index].projectGridImg),
+                      backgroundColor: bgColor,
+                    ),
                   ),
                 ),
               ),
+              isHovered[index]
+                  ? Text('')
+                  : Text(
+                      projectUtils[index].name,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.josefinSans(
+                        fontSize: 32,
+                        fontWeight: FontWeight.w700,
+                        color: isHovered[index] ? primaryColor : secondaryColor,
+                      ),
+                    ),
             ],
           ),
         ),

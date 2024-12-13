@@ -165,8 +165,8 @@ various combinations of Cubit/Bloc
     description: '''
 • Flutter & Dart: SOLID Principles and Top Design Patterns
 • Flutter BLoC TDD & Clean Architecture | Project Based [2024]
-• Microsoft Power BI Data Analyst,
-• Figma 
+• Microsoft Power BI Data Analyst
+• Figma UI UX Essentials
 ''',
   ),
 ];

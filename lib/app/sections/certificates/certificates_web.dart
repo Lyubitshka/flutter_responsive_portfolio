@@ -28,11 +28,9 @@ class _CertificatesWebState extends State<CertificatesWeb> {
       color: bgColor,
       padding: EdgeInsets.only(
         top: 3.sh,
-        // left: screenWidth > 1450 ? 35.sw : 25.sw,
         left: 15.sw,
         right: 15.sw,
         bottom: 42,
-        // right: screenWidth > 1450 ? 35.sw : 25.sw
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

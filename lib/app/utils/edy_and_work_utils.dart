@@ -19,9 +19,9 @@ List<EduWorkUtils> eduworkUtils = [
   EduWorkUtils(
     date: '2012\n2017',
     description:
-        'During the studies I worked as a chef in one of the best restaurants in Poznań. During that time I’ve learned good, fair and fruitful teamwork, working under time pressure and how to be well organised in work place and have very good time management. ',
+        "During my studies in civil engineering, I developed strong analytical and problem-solving skills, attention to detail, and the ability to work efficiently under pressure. These experiences helped me hone my organizational abilities, which are valuable for tackling complex problems and managing projects effectively in software development. Additionally, working as a chef in one of the best restaurants in Poznań taught me the importance of teamwork, time management, and staying calm under pressure, skills that I carry with me into every professional challenge.",
     subtitle: 'Poznań University of Technology',
-    title: 'Master of Civil Engineer Degree',
+    title: 'Master of Civil Engineer',
     icon: Icons.school,
   ),
   EduWorkUtils(

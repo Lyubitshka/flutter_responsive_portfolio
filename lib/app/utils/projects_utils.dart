@@ -105,7 +105,7 @@ List<ProjectUtils> projectUtils = [
     techStack: [
       'navigation in multiple-screens',
       'state management with Riverpod',
-      'Animated Builder()',
+      'AnimatedBuilder()',
       'AnimatedSwitcher()',
     ],
   ),
@@ -121,7 +121,13 @@ List<ProjectUtils> projectUtils = [
     imgAsset: portfolioImgs,
     gitLink: 'https://github.com/Lyubitshka/flutter_responsive_portfolio',
     projectGridImg: '/images/projects/portfolio3.png',
-    techStack: ['responsive UI', 'BLoC', 'animations'],
+    techStack: [
+      'responsive UI',
+      'BLoC',
+      'connectivity_plus',
+      'Provider for handling navigation',
+      'animations'
+    ],
   ),
   ProjectUtils(
     name: 'Other projects',
@@ -130,7 +136,7 @@ List<ProjectUtils> projectUtils = [
       "🌤️ OpenWeather API",
       '🎮 Tetris Game',
       '🪙 Currency converter',
-      '🧊 Roll a dice'
+      '🎲 Roll a dice'
     ],
     icon: Icons.other_houses_sharp,
     description: [
@@ -138,7 +144,7 @@ List<ProjectUtils> projectUtils = [
       'Flutter app can be integrated using the BLoC pattern to handle state management. It fetches weather data asynchronously and updates the UI by emitting different states such as loading, success, or error based on the API response.',
       tetrisDesc,
       'A simple, interactive currency converter built using Flutter and a currency conversion API.',
-      ''
+      'A simple Flutter app to roll a virtual dice and generate random outcomes for fun or games!'
     ],
     techStack: [],
     imgAsset: [

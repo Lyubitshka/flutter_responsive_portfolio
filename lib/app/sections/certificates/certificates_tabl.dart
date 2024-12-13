@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
-import 'package:web_presentation/app/sections/certificates/widgets/certificate_card.dart';
-import 'package:web_presentation/app/sections/certificates/widgets/certificates_date.dart';
-import 'package:web_presentation/app/sections/certificates/widgets/certificates_timeline.dart';
 import 'package:web_presentation/app/utils/certificates_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
+import 'package:web_presentation/core/constants/fonts.dart';
 
 class CertificatesTab extends StatefulWidget {
   const CertificatesTab({super.key});
@@ -23,18 +20,16 @@ class _CertificatesTabState extends State<CertificatesTab> {
       width: 100.sw,
       color: bgColor,
       padding: EdgeInsets.only(
-          top: 42,
-          left: screenWidth < 1200 ? 8.sw : 15.sw,
-          right: screenWidth < 1200 ? 8.sw : 15.sw),
+        top: 42,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'My Certificates',
-            style: GoogleFonts.josefinSans(
-              fontSize: 36,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.sw),
+            child: Text(
+              'My Certificates',
+              style: screenWidth < 800 ? titleMobile : titleTab,
             ),
           ),
           ListView.builder(
@@ -47,7 +42,7 @@ class _CertificatesTabState extends State<CertificatesTab> {
                 color: bgColor,
                 margin: EdgeInsets.only(
                   bottom: 20,
-                  right: screenWidth > 600 ? 12.sw : 8.sw,
+                  right: screenWidth > 1200 ? 12.sw : 8.sw,
                   left: 12.sw,
                 ),
                 elevation: 4,

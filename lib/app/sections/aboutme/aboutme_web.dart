@@ -3,155 +3,138 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:web_presentation/app/sections/aboutme/widgets/hoverable_hobby_chip.dart';
 import 'package:web_presentation/app/utils/about_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
-import 'package:web_presentation/core/constants/constants.dart';
+
+import '../../../core/constants/constants.dart';
 
 class AboutMeWeb extends StatelessWidget {
   const AboutMeWeb({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Container(
       width: 100.sw,
       color: bgColor,
-      padding: const EdgeInsets.only(top: 25, bottom: 20),
+      padding: EdgeInsets.symmetric(
+        vertical: 22,
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'After hours',
-            style: GoogleFonts.josefinSans(
-              fontSize: 42,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
+          Padding(
+            padding: EdgeInsets.only(bottom: 20, left: 15.sw),
+            child: Text(
+              'After hours',
+              style: GoogleFonts.josefinSans(
+                fontSize: 42,
+                fontWeight: FontWeight.w700,
+                color: primaryColor,
+              ),
             ),
           ),
-          const Gap(5),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                // width: 480,
-                // height: 400,
-                // clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                    color: bgColor,
-                    borderRadius: const BorderRadius.all(Radius.circular(12)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.shade500,
-                        spreadRadius: 1,
-                        blurRadius: 15,
-                        offset: const Offset(4, 4),
-                      ),
-                      const BoxShadow(
-                        color: Colors.white,
-                        spreadRadius: 3,
-                        blurRadius: 15,
-                        offset: Offset(-6, -6),
-                      ),
-                    ]),
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  alignment: AlignmentDirectional.topCenter,
-                  children: [
-                    SizedBox(
-                      width: 340,
-                      child: Padding(
-                        padding: const EdgeInsets.all(18.0),
-                        child: Text(
-                          aboutMe1,
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.josefinSans(
-                            fontSize: 22,
-                            // fontWeight: FontWeight.w500,
-                            color: secondaryColor,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      top: 190,
-                      child: Image.asset(
-                        'images/aboutme/learn.png',
-                      ),
-                    ),
-                  ],
-                ),
+              aboutCard(
+                text: aboutMe1,
+                imagePath: 'images/aboutme/learn.png',
               ),
-              Stack(
-                  clipBehavior: Clip.none,
-                  alignment: AlignmentDirectional.topCenter,
-                  children: [
-                    Image.asset(
-                      'images/aboutme/yoga.png',
-                    ),
-                    Positioned(
-                      top: 420,
-                      child: SizedBox(
-                        // height: 320,
-                        width: 420,
-                        child: Padding(
-                          padding: const EdgeInsets.all(18.0),
-                          child: Text(
-                            aboutMe2,
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.josefinSans(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w500,
-                              color: secondaryColor,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ]),
-              SizedBox(
-                height: 630,
-                width: 350,
-                child: ListView.builder(
-                    itemCount: hobbies.length,
-                    itemBuilder: (context, index) {
-                      return hobbyTag(index);
-                    }),
-              )
+              aboutCard(
+                text: aboutMe2,
+                imagePath: 'images/aboutme/yoga.png',
+              ),
+              Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                direction: Axis.vertical,
+                alignment: WrapAlignment.center,
+                children: hobbies
+                    .map((hobby) => HoverableHobbyChip(hobby: hobby))
+                    .toList(),
+              ),
             ],
           ),
-          // const Padding(padding: EdgeInsets.all(10))
         ],
       ),
     );
   }
 
-  hobbyTag(int index) {
+  Widget aboutCard({
+    required String text,
+    required String imagePath,
+  }) {
     return Container(
-      // height: 420,
-      margin: const EdgeInsets.only(bottom: 10),
-      // padding: const EdgeInsets.all(12),
+      width: 340,
+      height: 400,
       decoration: BoxDecoration(
-          color: hobbies[index].bgColor.withOpacity(0.9),
-          borderRadius: BorderRadius.circular(20)),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              child: Icon(
-                hobbies[index].icon,
-                color: Colors.white,
-                size: 35,
+        color: bgColor,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade500,
+            spreadRadius: 1,
+            blurRadius: 15,
+            offset: const Offset(4, 4),
+          ),
+          const BoxShadow(
+            color: Colors.white,
+            spreadRadius: 3,
+            blurRadius: 15,
+            offset: Offset(-6, -6),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.josefinSans(
+                fontSize: 20,
+                color: secondaryColor,
               ),
             ),
-            // const Gap(10),
-            Text(
-              hobbies[index].name,
-              style: GoogleFonts.josefinSans(color: Colors.white, fontSize: 22),
-            ),
-          ],
-        ),
+          ),
+          const Spacer(),
+          Image.asset(
+            imagePath,
+            height: 200,
+            fit: BoxFit.cover,
+          ),
+        ],
       ),
     );
   }
+
+  // Widget hobbyChip(HobbyTagDetails hobby) {
+  //   return Chip(
+  //     backgroundColor: hobby.bgColor.withOpacity(0.9),
+  //     shape: RoundedRectangleBorder(
+  //         borderRadius: BorderRadius.circular(50),
+  //         side: BorderSide.none // większe zaokrąglenie
+  //         ),
+  //     label: Row(
+  //       mainAxisSize: MainAxisSize.min,
+  //       children: [
+  //         Icon(
+  //           hobby.icon,
+  //           color: Colors.white,
+  //         ),
+  //         const Gap(8),
+  //         Text(
+  //           hobby.name,
+  //           style: GoogleFonts.josefinSans(color: Colors.white, fontSize: 16),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 }

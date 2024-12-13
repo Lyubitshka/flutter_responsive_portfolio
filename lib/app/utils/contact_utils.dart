@@ -6,17 +6,14 @@ class ContactUtils {
   final String? logoImg;
   final String description;
   bool? isLogo;
-  // final String address;
-  // final String phoneNum;
-  // final String email;
-  // final String linkedIn;
-  // final String github;
+  String? link;
 
   ContactUtils(
       {required this.title,
       this.icon,
       this.logoImg,
       this.isLogo,
+      this.link,
       required this.description});
 }
 
@@ -29,7 +26,7 @@ List<ContactUtils> contactUtils = [
   ),
   ContactUtils(
     title: 'Phone',
-    description: '+48 512 *** ***',
+    description: '+48 512 469 080',
     icon: Icons.phone_iphone,
     isLogo: false,
   ),
@@ -40,14 +37,15 @@ List<ContactUtils> contactUtils = [
     isLogo: false,
   ),
   ContactUtils(
-    title: 'LinkedIn',
-    description: 'linkedin.com/in/\nanna-doroszewska-19ba041a1',
-    logoImg: '/images/logo/linkedin.png',
-    isLogo: true,
-  ),
+      title: 'LinkedIn',
+      description: 'linkedin.com/in/anna-doroszewska-19ba041a1',
+      logoImg: '/images/logo/linkedin.png',
+      isLogo: true,
+      link: 'https://www.linkedin.com/in/anna-doroszewska-19ba041a1'),
   ContactUtils(
       title: 'Github',
       description: 'github.com/Lyubitshka',
       logoImg: '/images/logo/github.png',
-      isLogo: true),
+      isLogo: true,
+      link: 'https://www.github.com/Lyubitshka'),
 ];

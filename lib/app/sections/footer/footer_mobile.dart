@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -8,8 +7,8 @@ import 'package:web_presentation/app/utils/navbar_utils.dart';
 import 'package:web_presentation/core/color/colors.dart';
 import 'package:web_presentation/core/constants/constants.dart';
 
-class FooterWeb extends StatelessWidget {
-  const FooterWeb({super.key});
+class FooterMobile extends StatelessWidget {
+  const FooterMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +30,12 @@ class FooterWeb extends StatelessWidget {
               child: SizedBox(
                 // width: screenWidth < 1300 ? 150 : 300,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'Anna\'s Portfolio',
                       style: GoogleFonts.chango(
-                        fontSize: 35,
+                        fontSize: 22,
                         color: Colors.white60,
                       ),
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:web_presentation/app/sections/projects/widgets/project_card_dialog.dart';
@@ -32,8 +33,8 @@ class _ProjectsWebState extends State<ProjectsWeb> {
             child: Text(
               'My Projects',
               style: GoogleFonts.josefinSans(
-                fontSize: 48,
-                fontWeight: FontWeight.w900,
+                fontSize: 42,
+                fontWeight: FontWeight.w700,
                 color: primaryColor,
               ),
             ),
@@ -44,7 +45,7 @@ class _ProjectsWebState extends State<ProjectsWeb> {
               'select card for more details',
               textAlign: TextAlign.center,
               style: GoogleFonts.josefinSans(
-                fontSize: 32,
+                fontSize: 28,
                 fontWeight: FontWeight.w400,
                 color: secondaryColor,
               ),
@@ -104,52 +105,41 @@ class _ProjectsWebState extends State<ProjectsWeb> {
             ]),
         child: InkWell(
           onHover: (value) {
-            setState(
-              () {
-                isHovered[index] = value;
-              },
-            );
+            setState(() {
+              isHovered[index] = value;
+            });
           },
           onTap: () {
             showProjectDetails(index);
           },
-          child: Image.asset(
-            projectUtils[index].projectGridImg,
+          child: Stack(
+            alignment: AlignmentDirectional.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Positioned(
+                bottom: 12,
+                child: CircleAvatar(
+                  radius: 60,
+                  backgroundImage:
+                      AssetImage(projectUtils[index].projectGridImg),
+                  backgroundColor: bgColor,
+                ),
+              ),
+              Positioned(
+                top: 20,
+                child: Text(
+                  projectUtils[index].name,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.josefinSans(
+                    fontSize: 26,
+                    fontWeight: FontWeight.w700,
+                    color: isHovered[index] ? primaryColor : secondaryColor,
+                  ),
+                ),
+              ),
+            ],
           ),
-
-          // Text(
-          //   projectUtils[index].name,
-          //   style: GoogleFonts.josefinSans(
-          //       fontSize: isHovered[index] ? 28 : 20,
-          //       fontWeight: FontWeight.bold),
-          //   textAlign: TextAlign.center,
-          // ),
         ),
-
-        // Container(
-        //     decoration: BoxDecoration(
-        //       shape: BoxShape.circle,
-        //       color: primaryColor.withOpacity(0.8),
-        //     ),
-        //     child: InkWell(
-        //       onHover: (value) {
-        //         setState(
-        //           () {
-        //             isHovered[index] = value;
-        //           },
-        //         );
-        //       },
-        //       onTap: () {
-        //         showProjectDetails(index);
-        //       },
-        //       child: Text(
-        //         projectUtils[index].name,
-        //         style: GoogleFonts.josefinSans(
-        //             fontSize: isHovered[index] ? 28 : 20,
-        //             fontWeight: FontWeight.bold),
-        //         textAlign: TextAlign.center,
-        //       ),
-        //     )),
       ),
     );
   }
@@ -163,9 +153,12 @@ class _ProjectsWebState extends State<ProjectsWeb> {
             child: ProjectCardDialog(
               idx: projectUtils[index],
               projectName: projectUtils[index].name,
+              title: projectUtils[index].title,
               description: projectUtils[index].description,
               link: projectUtils[index].gitLink,
               imgAssets: projectUtils[index].imgAsset,
+              techStack: projectUtils[index].techStack,
+              icon: projectUtils[index].icon,
             )));
   }
 }

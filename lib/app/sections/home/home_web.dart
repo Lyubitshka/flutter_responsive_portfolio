@@ -3,6 +3,7 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_presentation/core/animations/entrance_fader.dart';
 import 'package:web_presentation/core/color/colors.dart';
 import 'package:web_presentation/core/constants/constants.dart';
@@ -28,7 +29,7 @@ class _HomeWebState extends State<HomeWeb> {
           Positioned(
             // right: -32.sw,
             right: screenSize.width < 1024 ? -22.sw : -30.sw,
-            top: 120,
+            top: 90,
             child: Image.asset(
               'images/home_img.png',
               // scale: screenSize.width < 1024 ? 1.4 : 1.2,
@@ -40,7 +41,7 @@ class _HomeWebState extends State<HomeWeb> {
           Padding(
             padding: EdgeInsets.only(
               left: 15.sw,
-              top: 28.sh,
+              top: 25.sh,
               // left: screenSize.width > 800 ? 15.sw : 10.sw,
               // top: screenSize.width > 800 ? 25.sh : 10.sh,
             ),
@@ -90,7 +91,14 @@ class _HomeWebState extends State<HomeWeb> {
                           isHover = value;
                         });
                       },
-                      onTap: () {},
+                      onTap: () async {
+                        final Uri url = Uri.parse(cvLink);
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
                       child: AvatarGlow(
                         startDelay: const Duration(seconds: 4),
                         glowColor: primaryColor,

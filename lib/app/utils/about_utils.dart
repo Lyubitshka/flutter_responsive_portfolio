@@ -54,62 +54,51 @@ class HobbyTagDetails {
 
 List<HobbyTagDetails> hobbies = [
   HobbyTagDetails(
-    name: 'web developement',
-    icon: Icons.web_asset,
-    bgColor: primaryColor,
+    name: 'App & Web Development',
+    icon: Icons.code,
+    bgColor: primaryColor.withOpacity(0.9),
   ),
   HobbyTagDetails(
-    name: 'app developement',
-    icon: Icons.app_shortcut,
-    bgColor: secondaryColor,
+    name: 'Learning Languages',
+    icon: Icons.language,
+    bgColor: secondaryColor.withOpacity(0.8),
   ),
   HobbyTagDetails(
-    name: 'learning languages',
-    icon: Icons.translate,
-    bgColor: const Color.fromARGB(255, 52, 132, 114),
+    name: 'Different Cultures',
+    icon: Icons.travel_explore,
+    bgColor: const Color.fromARGB(255, 118, 174, 175),
   ),
   HobbyTagDetails(
-    name: 'different cultures',
-    icon: Icons.photo_album,
-    bgColor: const Color.fromARGB(255, 52, 132, 114),
+    name: 'Unordinary Travelling',
+    icon: Icons.flight_takeoff,
+    bgColor: const Color.fromARGB(255, 100, 165, 140),
   ),
   HobbyTagDetails(
-    name: 'unordinary travelling',
-    icon: Icons.translate,
-    bgColor: const Color.fromARGB(255, 52, 132, 97),
+    name: 'Traditional Medicine',
+    icon: Icons.healing,
+    bgColor: const Color.fromARGB(255, 85, 147, 199),
   ),
   HobbyTagDetails(
-    name: 'traditional medicine',
-    icon: Icons.medication,
-    bgColor: const Color.fromARGB(255, 52, 80, 132),
+    name: 'Gardening & Herbs',
+    icon: Icons.eco,
+    bgColor: const Color.fromARGB(255, 75, 135, 92),
   ),
   HobbyTagDetails(
-    name: 'gardening & herbs',
-    icon: Icons.medication,
-    bgColor: const Color.fromARGB(255, 52, 80, 132),
+    name: 'Photography',
+    icon: Icons.camera_alt,
+    bgColor: const Color.fromARGB(255, 117, 129, 155),
   ),
   HobbyTagDetails(
-    name: 'photography',
-    icon: Icons.medication,
-    bgColor: const Color.fromARGB(255, 52, 80, 132),
+    name: 'Brain-Gut Connection',
+    icon: Icons.psychology,
+    bgColor: const Color.fromARGB(255, 140, 90, 132),
   ),
   HobbyTagDetails(
-    name: 'brain-gut connection',
-    icon: Icons.medication,
-    bgColor: const Color.fromARGB(255, 52, 80, 132),
-  ),
-  HobbyTagDetails(
-    name: 'biohacking',
-    icon: Icons.keyboard_command_key_outlined,
-    bgColor: const Color.fromARGB(255, 52, 80, 132),
+    name: 'Biohacking',
+    icon: Icons.biotech,
+    bgColor: const Color.fromARGB(255, 70, 100, 150),
   ),
 ];
-
-//////
-//////
-//////
-//////
-//////
 
 class AboutUtils {
   final String name;
@@ -125,29 +114,29 @@ class AboutUtils {
   });
 }
 
-List<AboutUtils> aboutUtils = [
-  AboutUtils(
-    name: 'Graphic Design',
-    percent: 0.75,
-    percentText: "75 %",
-    color: const Color(0xFFFCA61F),
-  ),
-  AboutUtils(
-    name: 'Web Designing',
-    percent: 0.95,
-    percentText: "95 %",
-    color: const Color(0xFF6F34FE),
-  ),
-  AboutUtils(
-    name: 'Branding Design',
-    percent: 0.85,
-    percentText: "85 %",
-    color: const Color(0xFF56CBBD),
-  ),
-  AboutUtils(
-    name: 'Web Development',
-    percent: 0.8,
-    percentText: "80 %",
-    color: const Color(0xFF3F396D),
-  ),
-];
+// List<AboutUtils> aboutUtils = [
+//   AboutUtils(
+//     name: 'Graphic Design',
+//     percent: 0.75,
+//     percentText: "75 %",
+//     color: const Color(0xFFFCA61F),
+//   ),
+//   AboutUtils(
+//     name: 'Web Designing',
+//     percent: 0.95,
+//     percentText: "95 %",
+//     color: const Color(0xFF6F34FE),
+//   ),
+//   AboutUtils(
+//     name: 'Branding Design',
+//     percent: 0.85,
+//     percentText: "85 %",
+//     color: const Color(0xFF56CBBD),
+//   ),
+//   AboutUtils(
+//     name: 'Web Development',
+//     percent: 0.8,
+//     percentText: "80 %",
+//     color: const Color(0xFF3F396D),
+//   ),
+// ];

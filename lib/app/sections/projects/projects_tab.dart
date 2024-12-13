@@ -155,9 +155,12 @@ class _ProjectsTabState extends State<ProjectsTab> {
         child: ProjectCardDialog(
           idx: projectUtils[index],
           projectName: projectUtils[index].name,
+          title: projectUtils[index].title,
           description: projectUtils[index].description,
           link: projectUtils[index].gitLink,
           imgAssets: projectUtils[index].imgAsset,
+          techStack: projectUtils[index].techStack,
+          icon: projectUtils[index].icon,
         ),
       ),
     );

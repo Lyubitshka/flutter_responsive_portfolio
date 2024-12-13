@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:web_presentation/app/sections/projects/widgets/project_card_dialog.dart';
 import 'package:web_presentation/app/utils/projects_utils.dart';
 import 'package:web_presentation/core/animations/entrance_fader.dart';
 import 'package:web_presentation/core/color/colors.dart';
+import 'widgets/project_card_dialog_mobile.dart';
 
 class ProjectsMobile extends StatefulWidget {
   const ProjectsMobile({super.key});
@@ -89,43 +89,36 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
               offset: const Offset(4, 4),
             ),
           ]),
-      child: Container(
-        // margin: EdgeInsets.all(18),
-        // decoration: const BoxDecoration(
-        //   shape: BoxShape.circle,
-        //   color: Colors.amber,
-        // ),
-        child: InkWell(
-            onHover: (value) {
-              setState(
-                () {
-                  isHovered[index] = value;
-                },
-              );
-            },
-            // hoverDuration: Duration(seconds: 3),
+      child: InkWell(
+          onHover: (value) {
+            setState(
+              () {
+                isHovered[index] = value;
+              },
+            );
+          },
+          // hoverDuration: Duration(seconds: 3),
 
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              // crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    showProjectDetails(index);
-                  },
-                  iconSize: 12.sw,
-                  icon: Icon(projectUtils[index].icon),
-                ),
-                Gap(5.sw),
-                Text(
-                  projectUtils[index].name,
-                  style: GoogleFonts.josefinSans(
-                      fontSize: 14, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            )),
-      ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: () {
+                  showProjectDetails(index);
+                },
+                iconSize: 12.sw,
+                icon: Icon(projectUtils[index].icon),
+              ),
+              Gap(5.sw),
+              Text(
+                projectUtils[index].name,
+                style: GoogleFonts.josefinSans(
+                    fontSize: 14, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          )),
     );
   }
 
@@ -133,12 +126,14 @@ class _ProjectsMobileState extends State<ProjectsMobile> {
     return showDialog(
       context: context,
       builder: (context) => Dialog(
-        child: ProjectCardDialog(
-          idx: projectUtils[index],
-          projectName: projectUtils[index].name,
-          description: projectUtils[index].description,
-          link: projectUtils[index].gitLink,
-          imgAssets: projectUtils[index].imgAsset,
+        child: SingleChildScrollView(
+          child: ProjectCardDialogMobile(
+            idx: projectUtils[index],
+            projectName: projectUtils[index].name,
+            description: projectUtils[index].description,
+            link: projectUtils[index].gitLink,
+            imgAssets: projectUtils[index].imgAsset,
+          ),
         ),
       ),
     );

@@ -36,7 +36,7 @@ class CertificateCard extends StatelessWidget {
                 // colorFilter:
                 image: AssetImage(image),
                 height: 180,
-                fit: BoxFit.fitWidth,
+                fit: BoxFit.scaleDown,
                 child: InkWell(
                   onTap: () {
                     showCertificateImg(context);
@@ -50,7 +50,9 @@ class CertificateCard extends StatelessWidget {
                 child: Text(
                   description!,
                   textAlign: TextAlign.justify,
-                  style: GoogleFonts.josefinSans(),
+                  style: GoogleFonts.josefinSans(
+                    fontSize: 12,
+                  ),
                 ),
               ),
 

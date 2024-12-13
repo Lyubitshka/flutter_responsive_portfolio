@@ -27,38 +27,47 @@ List<CertificatesUtils> certificatesUtils = [
         'https://www.udemy.com/certificate/UC-2e6a2303-482b-4fe8-820e-e0d047bdf787/',
     dateOfCompletion: "2022 November",
     length: 64,
-    description:
-        '''In a nutshell, during bootcamp I mainly build a Yelp-like web application with RESTful api and CRUD data operations about campings in USA:
-          • HTML5 / CSS3 / flexbox / responsive design / modern JS 
-          • creating SPA with AJAX 
-          • Bootstrap 5 
-          • ReactJS 
-          • DOM Manipulation 
-          • server-side JS with NodeJS & npm 
-          • crate fullstack application with ExpressJS and MongoDB 
-          • templating 
-          • REST
-          • monitor and test apis wiht Postman 
-          • SQL vs noSQL dbs 
-          • mongoose 
-          • authentication & authorization 
-          • cookies & sessions / common security issues / best practices 
-          • deploying apps / heroku 
-          • cloud databases / Firebase 
-          • image upload and storage 
-          • maps & geocoding ''',
+    description: '''
+In a nutshell, during bootcamp I mainly build a Yelp-like web application with RESTful api and CRUD data operations about campings in USA:
+• HTML5 / CSS3 / flexbox / responsive design / modern JS 
+• creating SPA with AJAX 
+• Bootstrap 5 
+• ReactJS 
+• DOM Manipulation 
+• server-side JS with NodeJS & npm 
+• crate fullstack application with ExpressJS and MongoDB 
+• templating 
+• REST
+• monitor and test apis wiht Postman 
+• SQL vs noSQL dbs 
+• mongoose 
+• authentication & authorization 
+• cookies & sessions / common security issues / best practices 
+• deploying apps / heroku 
+• cloud databases / Firebase 
+• image upload and storage 
+• maps & geocoding 
+''',
   ),
-  CertificatesUtils(
-    ['React'],
-    name: 'React - The Complete Guide 2023',
-    image: '/images/certificates/certificate_react.jpg',
-    link:
-        'https://www.udemy.com/certificate/UC-f3faaafb-e172-41a4-909f-9d848a1d59d4/',
-    dateOfCompletion: "2023 July",
-    length: 51,
-    description:
-        'Working with built-in hooks and building cutom hooks / styled components & css modules / http requests / handling forms and users inputs with validation / Redux & Redux Toolkit / routing with React Router / Next.js / deploying / authentication / unit tests / combining ReactJs with TypeScript / animations /',
-  ),
+  CertificatesUtils(['React'],
+      name: 'React - The Complete Guide 2023',
+      image: '/images/certificates/certificate_react.jpg',
+      link:
+          'https://www.udemy.com/certificate/UC-f3faaafb-e172-41a4-909f-9d848a1d59d4/',
+      dateOfCompletion: "2023 July",
+      length: 51,
+      description: '''
+• working with built-in hooks and building cutom hooks
+• styled components & css modules 
+• handling forms and users inputs with validation 
+• Redux & Redux Toolkit 
+• routing with React Router 
+• authentication 
+• unit tests 
+• combining ReactJs with TypeScript 
+• http requests
+
+'''),
   CertificatesUtils(
     ['TypeScript'],
     name: 'Mastering TypeScript',
@@ -158,6 +167,6 @@ various combinations of Cubit/Bloc
 • Flutter BLoC TDD & Clean Architecture | Project Based [2024]
 • Microsoft Power BI Data Analyst,
 • Figma 
-    ''',
+''',
   ),
 ];

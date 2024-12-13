@@ -29,8 +29,8 @@ class _CertificatesWebState extends State<CertificatesWeb> {
       padding: EdgeInsets.only(
         top: 3.sh,
         // left: screenWidth > 1450 ? 35.sw : 25.sw,
-        left: 10.sw,
-        right: 10.sw,
+        left: 15.sw,
+        right: 15.sw,
         bottom: 42,
         // right: screenWidth > 1450 ? 35.sw : 25.sw
       ),
@@ -40,8 +40,8 @@ class _CertificatesWebState extends State<CertificatesWeb> {
           Text(
             'My Certificates',
             style: GoogleFonts.josefinSans(
-              fontSize: 48,
-              fontWeight: FontWeight.w900,
+              fontSize: 42,
+              fontWeight: FontWeight.w700,
               color: primaryColor,
             ),
           ),

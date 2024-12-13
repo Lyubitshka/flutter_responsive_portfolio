@@ -30,16 +30,17 @@ environment:
 dependencies:
   animated_text_kit: ^4.2.2
   avatar_glow: ^3.0.1
-  carousel_slider: ^4.2.1
-  connectivity_plus: ^5.0.2
+  carousel_slider: ^5.0.0
+  connectivity_plus: ^6.1.1
   cupertino_icons: ^1.0.6
   equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.4
+  flutter_launcher_icons: ^0.14.1
   flutter_staggered_grid_view: ^0.7.0
   gap: ^3.0.1
-  google_fonts: 6.1.0
+  google_fonts: ^6.2.1
   provider: ^6.1.2
   responsive_builder: ^0.7.0
   scaled_list: 2.0.0
@@ -49,7 +50,7 @@ dependencies:
   url_launcher: ^6.1.7
 
 dev_dependencies:
-  flutter_lints: ^3.0.0
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
 
@@ -86,6 +87,31 @@ flutter:
     - assets/images/projects/tetris_2.png
     - assets/images/projects/tetris_3.png
     - assets/images/projects/mini_tetris.png
+    - assets/images/projects/portfolio2.png
+    - assets/images/projects/portfolio4.png
+    - assets/images/projects/mini_portfolio.png
+    - assets/images/projects/myworkout_1.png
+    - assets/images/projects/myworkout_2.png
+    - assets/images/projects/myworkout_3.png
+    - assets/images/projects/favpl_1.png
+    - assets/images/projects/favpl_2.png
+    - assets/images/projects/favpl_3.png
+    - assets/images/projects/favpl_4.png
+    - assets/images/projects/grocery_1.png
+    - assets/images/projects/grocery_2.png
+    - assets/images/projects/grocery_201.png
+    - assets/images/projects/grocery_21.png
+    - assets/images/projects/grocery_4.png
+    - assets/images/projects/grocery_3.png
+    - assets/images/projects/grocery_22.png
+    - assets/images/projects/kantor_1.png
+    - assets/images/projects/kantor_2.png
+    - assets/images/projects/kostka.png
+    - assets/images/projects/cookbook_1.png
+    - assets/images/projects/cookbook_2.png
+    - assets/images/projects/cookbook_3.png
+    - assets/images/projects/cookbook_4.png
+
 
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see

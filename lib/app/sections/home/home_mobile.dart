@@ -5,6 +5,7 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_presentation/core/animations/entrance_fader.dart';
 import 'package:web_presentation/core/color/colors.dart';
 import 'package:web_presentation/core/constants/constants.dart';
@@ -19,9 +20,7 @@ class HomeMobile extends StatefulWidget {
 class _HomeMobileState extends State<HomeMobile> {
   @override
   Widget build(BuildContext context) {
-    // final screenSize = MediaQuery.of(context).size;
     bool isHover = false;
-
     return Container(
       color: bgColor,
       child: Padding(
@@ -32,10 +31,8 @@ class _HomeMobileState extends State<HomeMobile> {
           bottom: 5.sh,
         ),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // SizedBox(height: 0.5.sh),
             AnimatedTextKit(totalRepeatCount: 1, animatedTexts: [
               TyperAnimatedText('Hello World',
                   speed: const Duration(milliseconds: 250),
@@ -60,7 +57,6 @@ class _HomeMobileState extends State<HomeMobile> {
               ),
             ),
             SizedBox(height: 6.sh),
-
             Center(
               child: InkWell(
                   onHover: (value) {
@@ -68,7 +64,14 @@ class _HomeMobileState extends State<HomeMobile> {
                       isHover = value;
                     });
                   },
-                  onTap: () {},
+                  onTap: () async {
+                    final Uri url = Uri.parse(cvLink);
+                    if (await canLaunchUrl(url)) {
+                      await launchUrl(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
                   child: AvatarGlow(
                     startDelay: const Duration(seconds: 4),
                     glowColor: primaryColor,

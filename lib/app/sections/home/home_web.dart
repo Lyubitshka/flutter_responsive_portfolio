@@ -31,7 +31,6 @@ class _HomeWebState extends State<HomeWeb> {
             top: 90,
             child: Image.asset(
               'images/home_img.png',
-              // scale: screenSize.width < 1024 ? 1.4 : 1.2,
               scale: 1.4,
               color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
               colorBlendMode: BlendMode.modulate,
@@ -41,13 +40,10 @@ class _HomeWebState extends State<HomeWeb> {
             padding: EdgeInsets.only(
               left: 15.sw,
               top: 25.sh,
-              // left: screenSize.width > 800 ? 15.sw : 10.sw,
-              // top: screenSize.width > 800 ? 25.sh : 10.sh,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // SizedBox(height: 0.5.sh),
                 AnimatedTextKit(
                   totalRepeatCount: 1,
                   animatedTexts: [

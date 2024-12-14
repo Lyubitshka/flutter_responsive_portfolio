@@ -3,6 +3,7 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_presentation/core/animations/entrance_fader.dart';
 import 'package:web_presentation/core/color/colors.dart';
 import 'package:web_presentation/core/constants/constants.dart';
@@ -40,14 +41,10 @@ class _HomeTabState extends State<HomeTab> {
             padding: EdgeInsets.only(
               left: 12.sw,
               top: 280,
-              // left: screenSize.width > 800 ? 15.sw : 10.sw,
-              // top: screenSize.width > 800 ? 25.sh : 10.sh,
             ),
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // SizedBox(height: 0.5.sh),
                 AnimatedTextKit(
                   totalRepeatCount: 1,
                   animatedTexts: [
@@ -90,7 +87,14 @@ class _HomeTabState extends State<HomeTab> {
                           isHover = value;
                         });
                       },
-                      onTap: () {},
+                      onTap: () async {
+                        final Uri url = Uri.parse(cvLink);
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          throw "Could not launch $url";
+                        }
+                      },
                       child: AvatarGlow(
                         startDelay: const Duration(seconds: 4),
                         glowColor: primaryColor,
@@ -100,7 +104,9 @@ class _HomeTabState extends State<HomeTab> {
                           width: 240,
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           decoration: BoxDecoration(
+                            // ignore: dead_code
                             color: isHover ? secondaryColor : primaryColor,
+
                             borderRadius: BorderRadius.circular(30),
                           ),
                           child: Center(
